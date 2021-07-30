@@ -1,0 +1,235 @@
+.additional_options_menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.additional_options_menu ul {
+    display: none;
+    top: 28px;
+    left: 3px;
+}
+
+.additional_options_menu.menu_open ul {
+    display: block;
+}
+
+.additional_options_menu:hover:after,
+.additional_options_menu.menu_open:after {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.additional_options_menu:after {
+    position: absolute;
+    top: 0;
+}
+
+.additional_options_menu.actions {
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 0px;
+}
+
+.additional_options_menu.actions .dot {
+    background-color: #FF6517;
+}
+
+.additional_options_menu.actions:after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    content: "";
+}
+
+.additional_options_menu.actions:hover {
+    background-color: inherit;
+}
+
+.additional_options_menu.actions .additional_options {
+    display: none;
+}
+
+tr .additional_options_menu.menu_open .additional_options ul {
+    display: none;
+}
+
+.additional_options_cloned_menu.additional_options {
+    position: absolute;
+}
+
+.additional_options_menu ul,
+.additional_options ul {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    list-style: none;
+    white-space: nowrap;
+    z-index: 10000000;
+    overflow: hidden;
+    background: #FFF;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #A0A0A0;
+    border-radius: 3px;
+}
+
+.additional_options ul.two_columns {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.additional_options_menu li,
+.additional_options ul li {
+    list-style-type: none;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.additional_options_menu li,
+.additional_options_menu li a,
+.additional_options li,
+.additional_options li a {
+    text-decoration: none;
+    font-size: 11.5px;
+    text-align: left;
+    overflow: auto;
+    color: inherit;
+    background-color: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.additional_options_menu li.additional_option_menu_item,
+.additional_options_menu li a {
+    padding: 5px 8px;
+}
+
+.additional_options_menu li a,
+.additional_options li a {
+    display: block;
+}
+
+.additional_options_menu li:hover,
+.additional_options li:hover {
+    background-color: #DEF;
+}
+
+.actions .additional_options ul,
+.additional_options_cloned_menu.additional_option ul {
+    left: auto;
+    right: 100%;
+    top: -6px;
+    columns: 1;
+    z-index: 10000000;
+}
+
+.actions.two-col .additional_options ul {
+    columns: 2;
+}
+
+.actions .additional_options li,
+.additional_options_cloned_menu.additional_options li {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.actions .additional_options li span,
+.additional_options_cloned_menu.additional_options li span {
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.additional_options .icon_action {
+    margin-right: 5px;
+}
+
+.additional_options_menu.actions .dot {
+    height: 4px;
+    width: 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.paginated_list_container .additional_options_menu.actions .dot {
+    height: 6px;
+    width: 6px;
+}
+
+.additional_options_menu.actions:not(.generic_ellipsis) .dot {
+    margin: 2px 1.5px;
+}
+
+.paginated_list_container .additional_options_menu.actions:not(.generic_ellipsis) .dot {
+    margin: 6px 2px;
+}
+
+.additional_options_menu.actions.generic_ellipsis .dot_container {
+    padding-top: 2px;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+}
+
+.actions .additional_options li,
+.actions .additional_options li a,
+.additional_options_cloned_menu.additional_options li,
+.additional_options_cloned_menu.additional_options li a {
+    font-size: 14px;
+}
+
+.actions .additional_options li.additional_option_menu_item,
+.actions .additional_options li a,
+.additional_options_cloned_menu.additional_options li a {
+    padding: 6px 10px;
+}
+
+.ellipsis_container {
+    position: fixed;
+}
+
+tr:hover td .action_circle {
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 20%);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+}
+
+.top-action {
+    display: flex;
+    align-items: center;
+    margin: 5px 5px 0px auto;
+    float: right;
+}
+
+.top-action i {
+    background-color: #0F6AA5;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+button.top-action,
+button.top-action:focus {
+    border: 0px;
+    background: none;
+    outline: 0px;
+}
+
+button.top-action:hover {
+    filter: brightness(120%);
+    color: #555555;
+}
+
+.row.table-top-actions {
+    margin-bottom: 0px;
+}

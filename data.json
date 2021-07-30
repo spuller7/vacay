@@ -1,0 +1,402 @@
+{
+    "items": [
+        {
+            "title": "Bricco",
+            "id": "here:pds:place:840drt2z-da7d929da56241ab90a63e9b04581a3e",
+            "ontologyId": "here:cm:ontology:hotel",
+            "resultType": "place",
+            "address": {
+                "label": "Bricco, 66 Cross St, Boston, MA 02113, United States",
+                "countryCode": "USA",
+                "countryName": "United States",
+                "stateCode": "MA",
+                "state": "Massachusetts",
+                "county": "Suffolk",
+                "city": "Boston",
+                "district": "North End",
+                "street": "Cross St",
+                "postalCode": "02113",
+                "houseNumber": "66"
+            },
+            "position": {
+                "lat": 42.36301,
+                "lng": -71.05606
+            },
+            "access": [
+                {
+                    "lat": 42.36291,
+                    "lng": -71.05618
+                }
+            ],
+            "distance": 92,
+            "categories": [
+                {
+                    "id": "500-5000-0000",
+                    "name": "Hotel/Motel",
+                    "primary": true
+                },
+                {
+                    "id": "100-1000-0000",
+                    "name": "Restaurant"
+                },
+                {
+                    "id": "100-1000-0001",
+                    "name": "Casual Dining"
+                },
+                {
+                    "id": "500-5000-0053",
+                    "name": "Hotel"
+                },
+                {
+                    "id": "600-6300-0064",
+                    "name": "Food/Beverage Specialty Store"
+                },
+                {
+                    "id": "600-6300-0066",
+                    "name": "Grocery"
+                }
+            ],
+            "references": [
+                {
+                    "supplier": {
+                        "id": "core"
+                    },
+                    "id": "1130467325"
+                },
+                {
+                    "supplier": {
+                        "id": "core"
+                    },
+                    "id": "1139097817"
+                },
+                {
+                    "supplier": {
+                        "id": "core"
+                    },
+                    "id": "1210790443"
+                },
+                {
+                    "supplier": {
+                        "id": "core"
+                    },
+                    "id": "1212952865"
+                },
+                {
+                    "supplier": {
+                        "id": "core"
+                    },
+                    "id": "31259419"
+                },
+                {
+                    "supplier": {
+                        "id": "tripadvisor"
+                    },
+                    "id": "10765654"
+                },
+                {
+                    "supplier": {
+                        "id": "tripadvisor"
+                    },
+                    "id": "322039"
+                },
+                {
+                    "supplier": {
+                        "id": "yelp"
+                    },
+                    "id": "55PGG2U1z-q7Z694F-B-_w"
+                },
+                {
+                    "supplier": {
+                        "id": "yelp"
+                    },
+                    "id": "EITnn5A8beuzn7TCfUMZAQ"
+                },
+                {
+                    "supplier": {
+                        "id": "yelp"
+                    },
+                    "id": "HeUnLUCbZp14okbOuUQuig"
+                },
+                {
+                    "supplier": {
+                        "id": "yelp"
+                    },
+                    "id": "_ixU9DQ60eC9t3lylRIR7w"
+                }
+            ],
+            "foodTypes": [
+                {
+                    "id": "304-000",
+                    "name": "Italian",
+                    "primary": true
+                },
+                {
+                    "id": "250-000",
+                    "name": "Middle Eastern"
+                },
+                {
+                    "id": "800-060",
+                    "name": "Sandwich"
+                },
+                {
+                    "id": "800-075",
+                    "name": "Seafood"
+                }
+            ],
+            "contacts": [
+                {
+                    "phone": [
+                        {
+                            "value": "+16172486800"
+                        },
+                        {
+                            "value": "+16172489629",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                },
+                                {
+                                    "id": "100-1000-0001"
+                                },
+                                {
+                                    "id": "600-6300-0064"
+                                },
+                                {
+                                    "id": "600-6300-0066"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "+16172489630",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                },
+                                {
+                                    "id": "100-1000-0001"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "+16172489859",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "+16174591293",
+                            "categories": [
+                                {
+                                    "id": "500-5000-0000"
+                                },
+                                {
+                                    "id": "500-5000-0053"
+                                }
+                            ]
+                        }
+                    ],
+                    "fax": [
+                        {
+                            "value": "(617) 367-0666",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        }
+                    ],
+                    "www": [
+                        {
+                            "value": "http://bricco.com",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                },
+                                {
+                                    "id": "100-1000-0001"
+                                },
+                                {
+                                    "id": "500-5000-0000"
+                                },
+                                {
+                                    "id": "500-5000-0053"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "http://www.bricco.com/panetteria",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "http://www.briccosalumeria.com",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "http://www.homemade-pasta.com",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                },
+                                {
+                                    "id": "100-1000-0001"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "https://briccosuites.com",
+                            "categories": [
+                                {
+                                    "id": "500-5000-0000"
+                                }
+                            ]
+                        }
+                    ],
+                    "email": [
+                        {
+                            "value": "briccosalumeriapastashop@dventures.net",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "briccosuites@dventures.net",
+                            "categories": [
+                                {
+                                    "id": "100-1000-0000"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "openingHours": [
+                {
+                    "categories": [
+                        {
+                            "id": "500-5000-0053"
+                        }
+                    ],
+                    "text": [
+                        "Mon-Sun: 08:00 - 21:30"
+                    ],
+                    "isOpen": false,
+                    "structured": [
+                        {
+                            "start": "T080000",
+                            "duration": "PT13H30M",
+                            "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+                        }
+                    ]
+                },
+                {
+                    "categories": [
+                        {
+                            "id": "100-1000-0001"
+                        }
+                    ],
+                    "text": [
+                        "Mon-Thu, Sun: 10:00 - 21:00",
+                        "Fri, Sat: 10:00 - 22:00"
+                    ],
+                    "isOpen": false,
+                    "structured": [
+                        {
+                            "start": "T100000",
+                            "duration": "PT11H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,SU"
+                        },
+                        {
+                            "start": "T100000",
+                            "duration": "PT12H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:FR,SA"
+                        }
+                    ]
+                },
+                {
+                    "categories": [
+                        {
+                            "id": "600-6300-0066"
+                        }
+                    ],
+                    "text": [
+                        "Mon-Thu: 10:00 - 20:00",
+                        "Fri: 10:00 - 22:00",
+                        "Sat: 09:00 - 21:00",
+                        "Sun: 10:00 - 18:00"
+                    ],
+                    "isOpen": false,
+                    "structured": [
+                        {
+                            "start": "T100000",
+                            "duration": "PT10H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH"
+                        },
+                        {
+                            "start": "T100000",
+                            "duration": "PT12H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:FR"
+                        },
+                        {
+                            "start": "T090000",
+                            "duration": "PT12H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:SA"
+                        },
+                        {
+                            "start": "T100000",
+                            "duration": "PT08H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:SU"
+                        }
+                    ]
+                },
+                {
+                    "categories": [
+                        {
+                            "id": "100-1000-0000"
+                        }
+                    ],
+                    "text": [
+                        "Mon-Thu: 16:00 - 23:00",
+                        "Fri: 12:00 - 23:59",
+                        "Sat: 00:00 - 02:00, 12:00 - 23:59",
+                        "Sun: 00:00 - 02:00, 12:00 - 23:00"
+                    ],
+                    "isOpen": false,
+                    "structured": [
+                        {
+                            "start": "T160000",
+                            "duration": "PT07H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH"
+                        },
+                        {
+                            "start": "T120000",
+                            "duration": "PT11H59M",
+                            "recurrence": "FREQ:DAILY;BYDAY:FR,SA"
+                        },
+                        {
+                            "start": "T000000",
+                            "duration": "PT02H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:SA,SU"
+                        },
+                        {
+                            "start": "T120000",
+                            "duration": "PT11H00M",
+                            "recurrence": "FREQ:DAILY;BYDAY:SU"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

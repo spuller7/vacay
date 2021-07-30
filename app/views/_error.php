@@ -1,0 +1,1 @@
+<div class="container"><h4><?= $exception->getCode(); ?> - <?= $exception->getMessage(); ?></h4></div>

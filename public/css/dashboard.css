@@ -1,0 +1,98 @@
+.top-nav {
+    background-color: #fff;
+    height: 65px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0px 31px;
+    z-index: 1;
+}
+
+.top-nav .account,
+.top-nav .logo {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    -webkit-box-align: center;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.logo {
+    padding: 15px 0px;
+}
+
+.logo ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    -webkit-box-align: center;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.top-nav .logo-sitename {
+    font-size: 16px;
+    margin-bottom: -4px;
+    font-weight: bold;
+}
+.top-nav .logo-qsai {
+    font-size: 11px;
+}
+
+.account li {
+    margin-right: 15px;
+}
+
+.account li:last-of-type {
+    margin-right: 0px;
+}
+
+.top-nav img {
+    height: 40px;
+    padding-right: 10px;
+}
+
+.top-nav > div {
+    display: inline-block;
+}
+
+.dashboard-container {
+    width: 100%;
+    height: 100%;
+}
+
+.left-nav {
+    padding-top: 96px;
+    width: 256px;
+    background-color: #313F5D;
+    height: 100vh;
+    float: left;
+    position: fixed;
+}
+
+.left-nav li {
+    color: #fff;
+}
+
+.page-content {
+    padding: 15px;
+    width: CALC(100% - 256px);
+    float: right;
+    padding-top: 96px;
+    background: #F2F2F2;
+}
+
+.info-card {
+    color: #9B9B9B;
+    font-weight: bold;
+    font-size: 14px;
+}
+.info-card i {
+    margin-right: 10px;
+    color: orange;
+}

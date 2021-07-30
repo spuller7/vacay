@@ -1,0 +1,1399 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Literata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Literata&display=swap');
+
+/*div, th {
+border:1px solid white; }
+
+th {
+border:1px solid black; }*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #eee;
+    overflow: hidden;
+}
+
+/* background image on home page */
+html.home {
+	background-image: url(../images/bg-home.jpg);
+	background-size: cover;
+}
+
+body-index {
+	background-image: url(../images/bg-width-blue.gif);
+    background-repeat: repeat-x;
+    /*background-image: url(../images/bg-height.gif);
+    background-repeat: repeat-y;*/
+    font-family: 'Roboto';
+}
+
+.body-feedback {
+	background-image: url(../images/bg-width.gif);
+    background-repeat: repeat-x;
+}
+
+.versionStr {
+	color: #808080;
+	font: bold 0.75em/75% 'Roboto', serif;
+	line-height: 125%;
+}
+
+
+/* delete this if no reason to keep it */
+/*.full-height {
+    height: 100vh;
+}*/
+
+h1 {
+    font: bold 2em/125% 'Roboto', serif;
+	color: white;
+	text-align: left;
+    padding: 20px 0 0 40px;
+    margin: 0;
+}
+
+h2 {
+    font: 1.75em/125% 'Roboto', serif;
+    padding: 20px 0;
+    margin: 0;
+}
+
+h3 {
+    font: 1.5em/125% 'Roboto', serif;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    font: 1.25em/125% 'Roboto', sans-serif;
+}
+
+h5, button, .project-headers, #navigation li {
+    font: .9em/125% 'Roboto', sans-serif;
+}
+
+p, ul {
+    font: 1em/175% 'Roboto', sans-serif;
+    margin: 10px 0 20px 0;
+}
+
+.instructions {
+	max-width:800px;
+	margin: 0 30px 30px 30px;
+}
+
+a {
+    color: #0f6aa5;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #0f6aa5;
+    text-decoration: underline;
+}
+
+/*
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    vertical-align: top;
+    font: 1.25em/125% 'Roboto', sans-serif;
+    color: white;
+    text-align: left;
+    background-color: #0f6aa5;
+    border-bottom: 1px solid white;
+    padding: 7px;
+}
+
+td {
+    vertical-align: top;
+    width: 20%;
+    text-align: left;
+    padding: 7px;
+}
+*/
+
+
+.reportDate {
+	white-space: nowrap;
+}
+
+.reportUser
+{
+	white-space: nowrap;
+}
+
+.reportResult 
+{
+	margin: 25px;
+}
+
+.reportResult > table
+{
+    width: 100%;
+    border-collapse: collapse;
+	border: 1px solid black;
+}
+
+.reportResult > table td, .reportResult > table th
+{
+	border: 1px solid black;
+	padding: 10px;
+	font-size: 12px;
+    font-family: 'Roboto';
+}
+
+
+button {
+    background-color: #001836;
+    border: 2px solid white;
+    text-align: center;
+    color: white;
+    padding: 4px 8px;
+    margin: 0 10px;
+}
+
+button:hover {
+    color:#001839;
+	background-color: #ddd;
+	border: 2px solid white;
+}
+
+input, textarea {
+    font: .85em/125% 'Roboto', sans-serif;
+}
+
+select, textarea, input {
+    border: 2px solid #0f6aa5;
+}
+
+select {
+    width: 170px;
+    padding: 5px;
+}
+
+textarea, input {
+    padding: 5px;
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-wrapper {
+    float: left;
+    flex: 1;
+    width: 190px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+#branding {
+    height: 75px;
+    background-image: url("../images/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#nav-wrapper {
+    float: left;
+    flex: 1;
+    width: 190px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+#branding {
+    height: 75px;
+    background-image: url("../images/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#navigation {
+    width: 185px;
+    text-align: center;
+    padding: 5px 0 20px 0;
+    margin: 0 auto;
+    position: fixed;
+}
+
+#navigation a {
+    font-size: .95em;
+    font-weight: bold;
+    color: white;
+}
+
+#navigation a:hover, #navigation a:focus {
+    color: orange;
+    text-decoration: none;
+}
+
+a.nav-active {
+    font-size: .95em;
+    font-weight: bold;
+    color: #55aadf;
+}
+
+#navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+#navigation li {
+    font-size: .9em;
+    line-height: 150%;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+#navigation i {
+    font-size: 1.5em;
+    color: white;
+    padding: 3px;
+    margin: 5px;
+}
+
+
+/* karen trying a dropdown menu. it's not quite there yet */
+/*#navigation {
+    width: 185px;
+    text-align: center;
+    padding: 5px 0 20px 0;
+    margin: 0 auto;
+}
+
+.dropdown a, .nav-not-dropdown a {
+    font-size: .95em;
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown a:hover, .dropdown a:focus, .nav-not-dropdown a:hover, .nav-not-dropdown a:focus {
+    color: orange;
+    text-decoration: none;
+}
+
+a.nav-active {
+    font-size: .95em;
+    font-weight: bold;
+    color: #55aadf;
+}
+
+.dropdown ul, .nav-not-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.dropdown li, .nav-not-dropdown li {
+    font-size: .9em;
+    line-height: 150%;
+    padding: 0;
+}
+
+.nav-nat-dropdown li {
+	margin-bottom: 50px;
+}
+
+.dropdown i, .nav-not-dropdown i {
+    font-size: 1.5em;
+    color: white;
+    padding: 3px;
+    margin: 5px;
+}*/
+
+/* navigation drop down section for feedback pages */
+/* create different classes for the dropdown section and the other links so they can be separated out. right now, the drop down hover is inheriting stuff from the navigation li margins?? */
+/*.dropbtn {
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: orange;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content li {
+	margin-bottom:0 !important;
+}
+
+.dropdown-content a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom:0;
+}
+
+.dropdown-content a:hover {
+	background-color: blue;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}*/
+
+
+
+#log-out {
+    width: 90%;
+    color: white;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin: 70px auto 0 auto;
+}
+
+#log-out h4 {
+    font-size: 1em;
+}
+
+#log-out button {
+	background-color:#0f6aa5;
+	padding-left:6px;
+	margin:0;
+}
+
+#log-out button:hover {
+	color:#0f6aa5;
+	background-color:#ddd;
+}
+
+/* for red icon circles, role testing buttons. delete when no longer needed. */
+
+.test-roles-wrapper {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+	width:90%;
+	font-size:.9em;
+	padding:0;
+	margin:25px auto 0 auto;
+}
+
+.test-roles {
+	float:left;
+	width:30%;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+.test-roles button {
+	background-color:#f00;
+}
+
+.test-roles button:hover {
+	color:#f00;
+	background-color:#ddd;
+}
+
+#content-wrapper {
+    float: left;
+    width: calc(100% - 196px);
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #0f6aa5;
+    border-bottom: 10px solid #777;
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    width: 100%;
+    padding: 0;
+    max-height: calc(100vh - 210px);
+    margin-bottom: 210px;
+    overflow-y: auto;
+}
+
+#content-padding {
+    padding: 0 25px;
+    margin: 0;
+}
+
+
+/* ----------------------------------------------------------------------------- Popup Window  */
+
+.popup-wrapper {
+    display: none;
+}
+
+.popup-wrapper-active {
+position: fixed; /*Stay in place */
+z-index: 999; /* Sit on top */
+left:50%;
+transform: translate(-50%, -50%);
+width:600px;
+border:4px solid #0f6aa5;
+background-color:white;
+padding: 50px;
+margin: 200px auto; 
+overflow:auto;
+}
+
+.popup-icon {
+	float:left;
+	padding:10px;
+	margin:0;
+}
+
+.popup-icon-circle {
+	width:35px;
+	height:35px;
+	color:white;
+	background-color:#001839;
+	border-radius:50%;
+	padding:0;
+	margin:0 auto;
+}
+
+.popup-icon-circle p {
+	text-align:center;
+	padding-top:7px;
+}
+	
+.popup-icon-circle i {
+	font-size:1.25em;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+.popup-icon-circle2 {
+	width: 35px;
+	height: 35px;
+	color:white;
+	background-color:#001839;
+	border-radius:50%;
+	padding: 0;
+	margin:0 auto;	
+}
+
+.popup-icon-circle2 p {
+	text-align:center;
+	padding-top:7px;
+}
+	
+.popup-icon-circle2 i {
+	font-size:1.25em;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+.popup-message {
+	float:left;
+	width:85%;
+	padding:0;
+	margin:10px 0 0 20;
+}
+	
+
+/* delete if not used */
+/*#sticky-footer {
+    width: 100%;
+    height: 75px;
+    color: white;
+    background-color: #0f6aa5;
+    padding: 0;
+    margin: 0;
+}
+
+#sticky-footer button {
+    float: right;
+}
+
+#sticky-footer button:hover {
+    background-color: #777;
+}*/
+
+
+/* ----------------------------------------------------------------------------- Feedback pages */
+
+#header-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    border-bottom: 10px solid #777;
+    padding: 0;
+    margin: 0;
+}
+
+#header-tabs h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 27px 0 0 0;
+    margin: 0;
+}
+
+#header-tabs > div.tab-item, #header-tabs > div.tab-item-active, #header-tabs > div.tab-item-last, #header-tabs > div.tab-item-last-active {
+    display: block;
+    float: left;
+    width: 25%;
+    height: 80px;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#header-tabs > div.tab-item, #header-tabs > div.tab-item-active {
+	border-right:4px solid white;
+}
+
+#header-tabs > div.tab-item-last, #header-tabs > div.tab-item-last-active {
+    margin: 0;
+}
+
+.tab-item-active, .tab-item-last-active {
+    color: white;
+    background-color: #0f6aa5;
+}
+
+.tab-item, .tab-item-last {
+    background-color: #222;
+}
+
+.tab-item a, .tab-item-active a, .tab-item-last a, .tab-item-last-active a {
+    color: white;
+}
+
+.tab-item a:hover, .tab-item a:focus, .tab-item-last a:hover, .tab-item-last a:focus {
+    color: #f06022;
+    text-decoration: none;
+}
+
+/* hides notification bell when there are no notifications. display:none and hidden were not working. */
+.fb-notification {
+	font-size:1px;
+	color:rgba(255, 255, 255, 0.0);
+}
+
+/* @keyframes makes bell ring when a notification comes through */
+.fb-notification-active {
+    animation: ring 1.5s ease;
+    font-size:1em;
+	color:#f6eb14;
+	padding:0 0 0 8px;
+    margin:0;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(35deg);
+    }
+    12.5% {
+        transform: rotate(-30deg);
+    }
+    25% {
+        transform: rotate(25deg);
+    }
+    37.5% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    62.5% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#fb-instructions {
+	width:88%;
+	padding:30px;
+	margin:0 auto;
+}
+
+.fb-wrapper {
+    width: 90%;
+    /*border-bottom: 1px solid #ccc;*/
+    padding: 5px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.fb-wrapper p {
+    font-size: .9em;
+    line-height: 120%;
+    padding: 0;
+    margin: 5px;
+}
+
+.fb-status-none, .fb-status-hold, .fb-status-review, .fb-status-un, .fb-text  {
+	border-radius:2px;
+}
+
+.fb-status-none, .fb-status-hold, .fb-status-review, .fb-status-un {
+    float: left;
+    width: 50px;
+    height: 65px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.fb-status-none i, .fb-status-hold i, .fb-status-review i, .fb-status-un i {
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+.fb-status-review i:first-child, .fb-status-un i:first-child {
+	padding:4px 0 8px 0;
+}
+
+.fb-status-none {
+    background-color:#001839;
+	/*background-color: #AF0000;*/
+}
+
+.fb-status-hold {
+    background-color:#0f6aa5;
+	/*background-color: f06022;*/
+}
+
+.fb-status-review {
+    background-color:#1a9ee8;
+	/*background-color: green;*/
+}
+
+.fb-status-un {
+    background-color:#f06022;
+	/*background-color: purple;*/
+}
+
+.review-name {
+    font-weight: bold;
+	text-decoration: underline;
+}
+
+.fb-action {
+    float: right;
+    width: 50px;
+    height: 65px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.fb-action p {
+	font-size:1.25em;
+	padding:5px 0 0 0;
+	margin:0;
+}
+
+.fb-action-review {
+    float: right;
+    width: 50px;
+    height: 65px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.fb-action-review p {
+	font-size:1.25em;
+	padding:5px 0 0 0;
+	margin:0;
+}
+
+
+.fb-dispo
+{
+    float: left;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+	padding-top: 15px;
+	background-color: #ccc;
+}
+
+.fb-dispo p {
+	font-size:1.25em;
+	padding:5px 0 0 0;
+	margin:0;
+}
+
+.fb-input-wrapper {
+    float: left;
+    width: calc(100% - 110px);
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+
+.fb-input-wrapper-review {
+    float: left;
+    width: calc(100% - 125px);
+    padding: 0;
+	margin: 0;
+    margin-left: 10px;
+    overflow: auto;
+}
+
+.fb-text {
+    min-height:55px;
+	background-color: #ccc;
+    padding: 5px;
+	overflow-wrap: break-word;
+}
+
+.fb-input {
+    float: left;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.fb-input-review {
+    width: 70%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.fb-input-review p {
+	font-size:.95em;
+	line-height:150%;
+	/*background-color:white;*/
+	padding:15px 10px;
+	margin:5px 0;
+}
+
+.project-star-active {
+	color:#ffe933; 
+}
+
+.active-collapse {
+	display: none;
+	//max-height: 0; 
+}
+
+.trash-active div{
+	display: none;
+}
+
+/* ----------------------------------------------------------------------------- Footer */
+
+div.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+div.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#unsolicited {
+    height: 100px;
+    color: white;
+    background-color: #0f6aa5;
+    padding: 10px;
+    margin: 0;
+}
+
+#unsolicited h4 {
+    padding: 10px 0;
+    margin: 0;
+}
+
+.un-focus {
+	filter:none;
+	-webkit-filter:none;
+}
+
+.un-blur {
+	filter:blur(4px);
+	-webkit-filter:blur(4px);
+}
+
+.un-blur2 {
+	filter:blur(16px);
+	-webkit-filter:blur(16px);
+}
+
+.un-icon {
+	font-size:1.4em;
+	padding:0 8px 0 0;
+	margin:0;
+}
+
+.un-form-wrapper {
+    padding: 0 20px 0 0;
+    overflow: auto;
+}
+
+.button-round, .disposition-active {
+    width: 35px;
+    height: 35px;
+	font-size:1.4em;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 2px;
+}
+
+.button-switch {
+    width: 35px;
+    height: 35px;
+	font-size:1.4em;
+	background-color:pink;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 2px;
+}
+
+.disposition-active {
+    background-color: #f06022;
+}
+
+.form-wrapper {
+    padding: 10px 20px;
+    overflow: auto;
+}
+
+.form-fields {
+    float: left;
+    padding: 5px;
+}
+
+/*--------------------------------W3 Schools CSS for Autocomplete in Unsolicited Footer--------------*/
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
+}
+
+.autocomplete-items {
+	position: absolute;
+	z-index: 99;
+	color:black;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+.autocomplete-items div {
+	padding: 3px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #777;
+}
+
+.autocomplete-items div:hover {
+	/*when hovering an item:*/
+	color:white;
+	font-weight:bold;
+	background-color: #f06022;
+}
+
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	color: white;
+	font-weight:bold;
+	background-color: #f06022 !important;
+}
+
+/* code not necessary, delete if not used */
+/*input[type=text] {
+	background-color: #f1f1f1;
+	width: 100%;
+}
+
+input[type=submit] {
+	background-color: DodgerBlue;
+	color: #fff;
+}*/
+
+
+/* ----------------------------------------------------------------------------- Reports page */
+
+.reports-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.reports-form-input {
+    width: 200px;
+    height: 125px;
+    font-size: .85em;
+    line-height: 175%;
+	background-color:white;
+    border: 1px solid #222;
+    padding: 3px;
+    margin: 0 0 25px 0;
+    overflow: auto;
+}
+
+.reports-names {
+    flex: 3;
+    padding: 20px;
+    margin: 0;
+}
+
+.reports-date {
+    flex: 3;
+    padding: 20px;
+    margin: 0;
+}
+
+.reports-buttons {
+    flex: 6;
+    padding: 20px;
+    margin: 0;
+}
+
+.reports-buttons-wrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+
+.reports-buttons-wrapper button {
+    width: 40px;
+    height: 40px;
+}
+
+.reports {
+    /*width: 100%;*/
+    padding: 0;
+    margin: 0;
+}
+
+.reports-name {
+    font-weight: bold;
+}
+
+.reports-sort, .reports-results {
+    display: flex;
+    width: calc(100% - 50px);
+    padding: 10px 25px;
+    margin: 0;
+    overflow: auto;
+}
+
+.reports-sort {
+    color: white;
+    background-color: #0f6aa5;
+    height: 40px;
+}
+
+.reports-results {
+    font-size: .75em;
+    border-bottom: 1px solid #ccc;
+}
+
+.reports-sort-col1 {
+    flex: 2;
+    padding: 5px;
+    margin: 0;
+}
+
+.reports-sort-col1 i {
+	font-size:1.75em;
+	width:25px;
+	height:25px;
+	background-color:#001839;
+	border-radius:50%;
+	padding:4px 0 0 4px;
+}
+
+.reports-sort-col2 {
+    flex: 4;
+    padding: 5px;
+    margin: 0;
+}
+
+.reports-sort-col1 h4, .reports-sort-col2 h4 {
+    padding: 0;
+    margin: 0;
+}
+
+/* ------------------- Disposition icon colors */
+
+/* Good */
+.disp-good {
+	color:#00ce00;
+}
+
+/* Neutral */
+.disp-neutral {
+	color:#ffcb05;
+}
+
+/* Poor */
+.disp-poor {
+	color:red;
+}
+
+/* delete if not needed */
+/*.disposition-icon {
+	width:35px;
+	height:35px;
+	background-color:#001839;
+	border-radius:50%;
+	padding:0;
+	margin:0 auto;
+}*/
+
+
+/* ----------------------------------------------------------------------------- Settings page */
+
+.settings-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-wrapper {
+	width:90%;
+	border:1px solid #777;
+	background-color:#ccc;
+	padding:12px 15px;
+	margin:25px auto;
+	overflow:auto;
+}
+
+.settings-section-title {
+	width:135px;
+}
+
+.settings-section {
+	float:left;
+	padding:10px;
+	margin:10px;
+}
+
+.settings-section h4 {
+	font-size:.9em;
+	text-transform:uppercase;
+	font-weight:bold;
+	padding:3px 0;
+	margin:0;
+}
+
+.settings-section h5 {
+	padding:0 0 10px 0;
+	margin:0;
+}
+
+.settings-section button {
+	font-size:1em;
+	text-align:center;
+	padding:0 0 0 4px;
+	margin:2px 0 2px 10px;
+}
+
+.settings-section label {
+    font-family: 'Roboto';	
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-wrapper {
+	width:40%;
+	min-width:600px;
+	border: 1px solid black;
+	background-color:white;
+	padding: 10px 30px 20px 30px;
+	margin: 20px auto;
+}
+
+.modal-content {
+	width:90%;
+	padding:0;
+	margin:10px auto;
+}
+
+.modal-section button {
+margin:2px; }
+
+.modal-section {
+	float:left;
+	padding:5px;
+	margin:10px;
+}
+
+
+
+.settings-form {
+    flex: 3;
+    padding: 20px;
+    margin: 0;
+}
+
+.settings-form p {
+    line-height: 125%;
+    padding: 3px;
+    margin: 0;
+}
+.settings-text-input
+{
+	width: 208px;
+}
+
+.settings-form-input {
+    width: 200px;
+    height: 175px;
+    font-size: .85em;
+    line-height: 175%;
+	background-color:white;
+    border: 1px solid #222;
+    padding: 3px;
+    margin: 0 0 25px 0;
+    overflow: auto;
+    font-family: 'Roboto';	
+}
+
+.primary-reason
+{
+	line-height:100%;
+}
+	
+
+/* delete if not needed */
+
+/* The Close Button */
+/*.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, 
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}*/
+
+/* ----------------------------------------------------------------------------- Solicit Feedback page */
+
+#solicit-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.solicit-form {
+    flex: 8;
+    border-right: 1px solid #777;
+}
+
+.solicit-preview {
+    flex: 4;
+    padding: 10px 40px 0 20px;
+}
+
+.solicit-preview h3, .solicit-preview h4, .solicit-preview p {
+    padding: 3px 0;
+    margin: 3px 0;
+}
+
+/* ------------------Katie Testing ----------------------*/
+.name-bold {
+    font-weight: bold;
+}
+
+.name-hide {
+	display: none;
+}
+
+/* ----- */
+
+/* Dropdown Button */
+.dropbtn {
+/*  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;*/
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 24px; top: 0px;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 2px 6px;
+  text-decoration: none;
+  display: inline;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {}
+
+
+.review-icons {
+    float: right;
+	top: 0px;
+    width: 120px;
+    height: 35px;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+	padding-top: 0;
+	background-color: #ccc;
+	border: 0px solid black;
+}
+
+.review-icon {
+	font-size: 30px;
+	display: inline-block;
+	border: 0px solid red;
+	background: #ccc;
+	padding: 2px;
+	margin: 0;
+}
+
+.ri-star {
+	color: gold;
+	text-shadow: 2px 2px #404040;
+}
+
+.ri-check {
+	color: #00FF00;
+	text-shadow: 2px 2px #404040;
+}
+
+.ri-times {
+	color: #FF0000;
+	text-shadow: 2px 2px #404040;
+}
+
+.loginLabel {
+	display: inline-block;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+.loginDiv {
+	display: block;
+	width: 250px;
+	border: 3px solid orange;
+	font-family: 'Roboto';
+	margin: 10px;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	background-color: #eee; 
+}
+
+.loginInput {
+	display: inline-block;
+}
+
+.loginSubmit {
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+#LoginMessage {
+	color: red;
+}
+

@@ -1,0 +1,50 @@
+.disposition-icons {
+    display: flex;
+    padding: 25px;
+    padding-bottom: 0px;
+}
+
+.disposition-icon {
+    margin: auto;
+}
+
+.disposition-icon p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.disposition-icons [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.disposition-icons.is-invalid {
+    border: 1px solid #dc3545;
+    border-radius: 0.25rem;
+}
+
+/* IMAGE STYLES */
+
+.disposition-icons [type=radio]+i {
+    cursor: pointer;
+}
+
+.disposition-icons [type=radio]+i:hover {
+    color: #5e5e5e;
+}
+
+
+/* CHECKED STYLES */
+
+[type=radio]:checked+i,
+[type=radio]:checked+p,
+[type=radio]:checked+i:hover{
+    color: #0F6AA5;
+}
+
+[type=radio]:checked+i.fa-poop,
+[type=radio]:checked+p {
+    color: #7c4200;
+}

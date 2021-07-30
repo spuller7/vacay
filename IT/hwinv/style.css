@@ -1,0 +1,120 @@
+#search {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+a {
+	color: blue;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+a:hover {
+	color: purple;
+}
+
+h3 {
+	display: inline-block;
+	/*color: black;*/
+}
+
+i {
+	display: inline-block;
+}
+
+input {
+	line-height: 0%;
+}
+
+p {
+	display: inline-block;
+	line-height: 0%;	
+}
+
+tr:nth-child(even) {
+   /* background-color: #e6f5ff; */
+   background-color: #8F8F8F;
+}
+
+tr:nth-child(odd) {
+   /* background-color: #fff2e6; */
+   background-color: #AAA;
+}
+
+th {
+    color: white;
+    background-color: #3A3A3A;
+}
+
+.fa {
+  font-size: 60px;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+}
+
+.fa:hover {
+  color: blue;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+body {
+    background-color: #EEE;
+}
+
+.modal-content {
+  background-color: #EEE;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px solid #111;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #adadad;
+  color: black;
+  width: 60%;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

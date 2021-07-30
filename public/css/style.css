@@ -1,0 +1,172 @@
+body {
+    margin: 0px;
+}
+
+#content {
+    background-color: #F2F2F2;
+    height: 100%;
+}
+
+.half-bottom {
+    margin-bottom: 10px;
+}
+
+.container-margin {
+    margin: 0px 20px;
+}
+
+.button-row {
+    display: flex;
+}
+
+.prompt {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.icon-button {
+    margin: auto;
+}
+
+.icon-button i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 2px black solid;
+    border-radius: 15px;
+}
+
+.icon-button .hiking {
+    background: url(/img/icons/hiking.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.icon-button .food {
+    background: url(/img/icons/food.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+/* form css */
+
+.required {
+    font-weight: bold;
+    color: #000;
+}
+
+label {
+    display: block;
+    margin: 2px 0 2px 0;
+    font-size: 13px;
+}
+
+
+/* login css */
+
+.background {
+    background-image: url('../img/layout/login-background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#login-box {
+    background-color: #fff;
+    margin: auto;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    max-width: 30%;
+}
+
+.app-logo {
+    padding: 15px 20px;
+}
+
+.app-logo ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    -webkit-box-align: center;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.app-logo img {
+    height: 60px;
+    padding-right: 14px;
+}
+
+.logo-sitename {
+    font-size: 20px;
+}
+
+.logo-qsai {
+    font-size: 16px;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container button {
+    margin: 0px 10px;
+}
+
+.table {
+    margin-bottom: 0px !important;
+}
+
+.form-group select {
+    display: block;
+}
+
+.arrow {
+  border-top: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-bottom: 5px solid black;
+  display: inline-block;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.filters {
+    font-weight: bold;
+    color: #5bc0de;
+    cursor: pointer;
+}
+
+.infoHeader {
+    font-weight: bold;
+}

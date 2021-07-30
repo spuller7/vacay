@@ -1,0 +1,1247 @@
+Postmaster notify: see transcript for details
+--t2OL8LJm001091.1427231305/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 17:08:25 -0400
+from localhost
+with id t2OL8LJl001091
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2OL8LJm001091.1427231305/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Arrival-Date: Tue, 24 Mar 2015 17:08:25 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:08:25 -0400
+
+--t2OL8LJm001091.1427231305/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2OL8LJl001091;
+	Tue, 24 Mar 2015 17:08:25 -0400
+Date: Tue, 24 Mar 2015 17:08:25 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503242108.t2OL8LJl001091@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2OL8LJl001091.1427231305/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2OL8LJl001091.1427231305/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 16:48:36 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2OL8LJl001091.1427231305/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Arrival-Date: Tue, 24 Mar 2015 16:48:36 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:08:25 -0400
+
+--t2OL8LJl001091.1427231305/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2OKma0C000998;
+	Tue, 24 Mar 2015 16:48:36 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2OKmaxC000997;
+	Tue, 24 Mar 2015 16:48:36 -0400
+Date: Tue, 24 Mar 2015 16:48:36 -0400
+Message-Id: <201503242048.t2OKmaxC000997@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+Shpishay( drice@quantumsignal.com ) says:
+
+Test123
+RBR version: 0.6.11 on WindowsPlayer
+
+/home/jcrawford/public_html/uploadedLogs/96.88.134.177-Dan2015-02-06-16-36-49_1760.log
+/home/jcrawford/public_html/uploadedLogs/96.88.134.177-Dan2015-02-06-16-36-00_6904.log
+
+
+--t2OL8LJl001091.1427231305/match.rustbucketrumble.com--
+
+
+--t2OL8LJm001091.1427231305/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2OL8LJq001091.1427231308/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 17:08:28 -0400
+from localhost
+with id t2OL8LJp001091
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2OL8LJq001091.1427231308/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Arrival-Date: Tue, 24 Mar 2015 17:08:28 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:08:28 -0400
+
+--t2OL8LJq001091.1427231308/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2OL8LJp001091;
+	Tue, 24 Mar 2015 17:08:28 -0400
+Date: Tue, 24 Mar 2015 17:08:28 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503242108.t2OL8LJp001091@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2OL8LJp001091.1427231308/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2OL8LJp001091.1427231308/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 15:01:18 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2OL8LJp001091.1427231308/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Arrival-Date: Tue, 24 Mar 2015 15:01:18 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:08:27 -0400
+
+--t2OL8LJp001091.1427231308/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2OJ1I4H000771;
+	Tue, 24 Mar 2015 15:01:18 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2OJ1GQ2000770;
+	Tue, 24 Mar 2015 15:01:16 -0400
+Date: Tue, 24 Mar 2015 15:01:16 -0400
+Message-Id: <201503241901.t2OJ1GQ2000770@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+BattleStar(  ) says:
+
+this game seems to be quite funny,hoping for level upgrading and weapon dropping system
+RBR version: 0.6.10 on WindowsPlayer
+
+
+
+--t2OL8LJp001091.1427231308/match.rustbucketrumble.com--
+
+
+--t2OL8LJq001091.1427231308/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2OLMTv4001184.1427232149/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 17:22:29 -0400
+from localhost
+with id t2OLMTv3001184
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2OLMTv4001184.1427232149/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 17:22:29 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:22:29 -0400
+
+--t2OLMTv4001184.1427232149/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2OLMTv3001184;
+	Tue, 24 Mar 2015 17:22:29 -0400
+Date: Tue, 24 Mar 2015 17:22:29 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503242122.t2OLMTv3001184@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2OLMTv3001184.1427232149/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2OLMTv3001184.1427232149/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 17:22:27 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2OLMTv3001184.1427232149/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 17:22:27 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 17:22:29 -0400
+
+--t2OLMTv3001184.1427232149/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2OLMQv3001182;
+	Tue, 24 Mar 2015 17:22:27 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2OLMQ12001181;
+	Tue, 24 Mar 2015 17:22:26 -0400
+Date: Tue, 24 Mar 2015 17:22:26 -0400
+Message-Id: <201503242122.t2OLMQ12001181@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+Ventricide( randomthoughtman@live.com ) says:
+
+My initial thoughts were positive about the game, however, I would recommend a slowdown in the jump physics; it's a bit troublesome to jump so quickly.  To clarify, I don't mean jumping simulatenously, I'm specifying the speed in one particular jump from the initial launch to landing.  Regardless, I look forward to more.
+RBR version: 0.6.10 on WindowsPlayer
+
+
+
+--t2OLMTv3001184.1427232149/match.rustbucketrumble.com--
+
+
+--t2OLMTv4001184.1427232149/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P0YlW1001608.1427243687/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 20:34:47 -0400
+from localhost
+with id t2P0YlW0001608
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P0YlW1001608.1427243687/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 20:34:47 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 20:34:47 -0400
+
+--t2P0YlW1001608.1427243687/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P0YlW0001608;
+	Tue, 24 Mar 2015 20:34:47 -0400
+Date: Tue, 24 Mar 2015 20:34:47 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250034.t2P0YlW0001608@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P0YlW0001608.1427243687/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P0YlW0001608.1427243687/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 20:34:44 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P0YlW0001608.1427243687/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 20:34:44 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 20:34:46 -0400
+
+--t2P0YlW0001608.1427243687/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P0YiW0001606;
+	Tue, 24 Mar 2015 20:34:44 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P0YhQm001605;
+	Tue, 24 Mar 2015 20:34:43 -0400
+Date: Tue, 24 Mar 2015 20:34:43 -0400
+Message-Id: <201503250034.t2P0YhQm001605@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+Shpishay(  ) says:
+
+Blue sniper laser is faint and hard to see against the blue sky.
+RBR version: 0.6.12 on WindowsPlayer
+
+
+
+--t2P0YlW0001608.1427243687/match.rustbucketrumble.com--
+
+
+--t2P0YlW1001608.1427243687/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P0hKW1001616.1427244200/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 20:43:20 -0400
+from localhost
+with id t2P0hKW0001616
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P0hKW1001616.1427244200/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 20:43:20 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 20:43:20 -0400
+
+--t2P0hKW1001616.1427244200/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P0hKW0001616;
+	Tue, 24 Mar 2015 20:43:20 -0400
+Date: Tue, 24 Mar 2015 20:43:20 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250043.t2P0hKW0001616@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P0hKW0001616.1427244200/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P0hKW0001616.1427244200/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 20:43:17 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P0hKW0001616.1427244200/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 20:43:17 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 20:43:20 -0400
+
+--t2P0hKW0001616.1427244200/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P0hHW0001614;
+	Tue, 24 Mar 2015 20:43:17 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P0hHek001613;
+	Tue, 24 Mar 2015 20:43:17 -0400
+Date: Tue, 24 Mar 2015 20:43:17 -0400
+Message-Id: <201503250043.t2P0hHek001613@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+Shpishay(  ) says:
+
+Tried to play the basic tutorial after the various ranked games today. Instead of loading correctly, an obnoxious sound played, the camera was focused on the blue base. I quit and tried again with the same results. Restarted the game and it worked fine.
+RBR version: 0.6.12 on WindowsPlayer
+
+/home/jcrawford/public_html/uploadedLogs/98.224.225.87-2015-03-24-20-40-43_2368.log
+
+
+--t2P0hKW0001616.1427244200/match.rustbucketrumble.com--
+
+
+--t2P0hKW1001616.1427244200/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P3a9KJ001850.1427254569/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:36:09 -0400
+from localhost
+with id t2P3a9KI001850
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P3a9KJ001850.1427254569/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:36:09 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:36:09 -0400
+
+--t2P3a9KJ001850.1427254569/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P3a9KI001850;
+	Tue, 24 Mar 2015 23:36:09 -0400
+Date: Tue, 24 Mar 2015 23:36:09 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250336.t2P3a9KI001850@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P3a9KI001850.1427254569/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P3a9KI001850.1427254569/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:36:06 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P3a9KI001850.1427254569/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:36:06 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:36:09 -0400
+
+--t2P3a9KI001850.1427254569/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P3a5KI001848;
+	Tue, 24 Mar 2015 23:36:06 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P3a5lS001847;
+	Tue, 24 Mar 2015 23:36:05 -0400
+Date: Tue, 24 Mar 2015 23:36:05 -0400
+Message-Id: <201503250336.t2P3a5lS001847@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+DerBau(  ) says:
+
+This is Sam - had the crazy screen occur.
+RBR version: 0.6.10 on WindowsPlayer
+
+
+
+--t2P3a9KI001850.1427254569/match.rustbucketrumble.com--
+
+
+--t2P3a9KJ001850.1427254569/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P3d7MW001854.1427254747/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:39:07 -0400
+from localhost
+with id t2P3d7MV001854
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P3d7MW001854.1427254747/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:39:07 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:39:07 -0400
+
+--t2P3d7MW001854.1427254747/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P3d7MV001854;
+	Tue, 24 Mar 2015 23:39:07 -0400
+Date: Tue, 24 Mar 2015 23:39:07 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250339.t2P3d7MV001854@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P3d7MV001854.1427254747/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P3d7MV001854.1427254747/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:39:04 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P3d7MV001854.1427254747/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:39:04 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:39:07 -0400
+
+--t2P3d7MV001854.1427254747/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P3d4MV001852;
+	Tue, 24 Mar 2015 23:39:04 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P3d4it001851;
+	Tue, 24 Mar 2015 23:39:04 -0400
+Date: Tue, 24 Mar 2015 23:39:04 -0400
+Message-Id: <201503250339.t2P3d4it001851@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+DerBau(  ) says:
+
+got 0 of 6 connected (so did jason). Matt, john and justin reporting 5/6 connected
+RBR version: 0.6.10 on WindowsPlayer
+
+
+
+--t2P3d7MV001854.1427254747/match.rustbucketrumble.com--
+
+
+--t2P3d7MW001854.1427254747/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P3iQBe001862.1427255066/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:44:26 -0400
+from localhost
+with id t2P3iQBd001862
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P3iQBe001862.1427255066/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:44:26 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:44:26 -0400
+
+--t2P3iQBe001862.1427255066/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P3iQBd001862;
+	Tue, 24 Mar 2015 23:44:26 -0400
+Date: Tue, 24 Mar 2015 23:44:26 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250344.t2P3iQBd001862@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P3iQBd001862.1427255066/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P3iQBd001862.1427255066/match.rustbucketrumble.com
+
+The original message was received at Tue, 24 Mar 2015 23:44:23 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P3iQBd001862.1427255066/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Tue, 24 Mar 2015 23:44:23 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Tue, 24 Mar 2015 23:44:25 -0400
+
+--t2P3iQBd001862.1427255066/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P3iNBd001860;
+	Tue, 24 Mar 2015 23:44:23 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P3iNoN001859;
+	Tue, 24 Mar 2015 23:44:23 -0400
+Date: Tue, 24 Mar 2015 23:44:23 -0400
+Message-Id: <201503250344.t2P3iNoN001859@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+DerBau(  ) says:
+
+Background: Ranked game, got 6 players, everyone else showed 5/6 connected but I showed 0/6 connected. I backed out to main menu and rejoined. Went back to 0/6 connected so I quit the game and started a new instance. Joined the ranked game and got 5/6. We believe a new player (redboy) was stuck at 0/6 like i was.
+RBR version: 0.6.10 on WindowsPlayer
+
+/home/jcrawford/public_html/uploadedLogs/68.66.21.55-2015-03-24-23-39-35_5312.log
+
+
+--t2P3iQBd001862.1427255066/match.rustbucketrumble.com--
+
+
+--t2P3iQBe001862.1427255066/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2P4fWct001926.1427258493/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 00:41:32 -0400
+from localhost
+with id t2P4fWcs001926
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2P4fWct001926.1427258493/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 00:41:32 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 00:41:32 -0400
+
+--t2P4fWct001926.1427258493/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2P4fWcs001926;
+	Wed, 25 Mar 2015 00:41:32 -0400
+Date: Wed, 25 Mar 2015 00:41:32 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503250441.t2P4fWcs001926@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2P4fWcs001926.1427258492/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2P4fWcs001926.1427258492/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 00:41:29 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2P4fWcs001926.1427258492/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 00:41:29 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 00:41:32 -0400
+
+--t2P4fWcs001926.1427258492/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2P4fTcs001924;
+	Wed, 25 Mar 2015 00:41:29 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2P4fSqA001923;
+	Wed, 25 Mar 2015 00:41:28 -0400
+Date: Wed, 25 Mar 2015 00:41:28 -0400
+Message-Id: <201503250441.t2P4fSqA001923@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+Sukotto( scottkletzka@yahoo.com ) says:
+
+Love it so far guys! Glad to see RZ back to making vidya games! :)
+
+-Scott K
+RBR version: 0.6.10 on OSXPlayer
+
+
+
+--t2P4fWcs001926.1427258492/match.rustbucketrumble.com--
+
+
+--t2P4fWct001926.1427258493/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2PE7fYe004681.1427292461/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 10:07:41 -0400
+from localhost
+with id t2PE7fYd004681
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2PE7fYe004681.1427292461/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 10:07:41 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 10:07:41 -0400
+
+--t2PE7fYe004681.1427292461/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2PE7fYd004681;
+	Wed, 25 Mar 2015 10:07:41 -0400
+Date: Wed, 25 Mar 2015 10:07:41 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503251407.t2PE7fYd004681@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2PE7fYd004681.1427292461/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2PE7fYd004681.1427292461/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 10:07:38 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2PE7fYd004681.1427292461/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 10:07:38 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 10:07:41 -0400
+
+--t2PE7fYd004681.1427292461/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2PE7cYd004679;
+	Wed, 25 Mar 2015 10:07:38 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2PE7ceM004678;
+	Wed, 25 Mar 2015 10:07:38 -0400
+Date: Wed, 25 Mar 2015 10:07:38 -0400
+Message-Id: <201503251407.t2PE7ceM004678@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+rbr5(  ) says:
+
+The "How to Play" weird locked-camera tutorial bug just occurred.
+RBR version: 0.6.12 on WindowsPlayer
+
+/home/jcrawford/public_html/uploadedLogs/96.88.134.188-2015-03-25-09-23-51_736.log
+
+
+--t2PE7fYd004681.1427292461/match.rustbucketrumble.com--
+
+
+--t2PE7fYe004681.1427292461/match.rustbucketrumble.com--
+
+============================================
+Postmaster notify: see transcript for details
+--t2PE84nR004687.1427292484/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 10:08:04 -0400
+from localhost
+with id t2PE84nQ004687
+
+   ----- The following addresses had permanent fatal errors -----
+<apache@match.rustbucketrumble.com>
+    (reason: 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<apache@rustbucketrumble.com>
+<<< 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <apache@match.rustbucketrumble.com>... User unknown
+>>> DATA
+<<< 503 5.0.0 Need RCPT (recipient)
+
+--t2PE84nR004687.1427292484/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 10:08:04 -0400
+
+Final-Recipient: RFC822; apache@rustbucketrumble.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <apache@rustbucketrumble.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 10:08:04 -0400
+
+--t2PE84nR004687.1427292484/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <MAILER-DAEMON>
+Received: from localhost (localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4) id t2PE84nQ004687;
+	Wed, 25 Mar 2015 10:08:04 -0400
+Date: Wed, 25 Mar 2015 10:08:04 -0400
+From: Mail Delivery Subsystem <MAILER-DAEMON>
+Message-Id: <201503251408.t2PE84nQ004687@match.rustbucketrumble.com>
+To: <apache@rustbucketrumble.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="t2PE84nQ004687.1427292484/match.rustbucketrumble.com"
+Subject: Returned mail: see transcript for details
+Auto-Submitted: auto-generated (failure)
+
+This is a MIME-encapsulated message
+
+--t2PE84nQ004687.1427292484/match.rustbucketrumble.com
+
+The original message was received at Wed, 25 Mar 2015 10:08:01 -0400
+from localhost.localdomain [127.0.0.1]
+
+   ----- The following addresses had permanent fatal errors -----
+<matt@reactorzero.com>
+    (reason: 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.)
+
+   ----- Transcript of session follows -----
+... while talking to smtpauth.hosting.earthlink.net.:
+>>> RCPT To:<matt@reactorzero.com>
+<<< 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+550 5.1.1 <matt@reactorzero.com>... User unknown
+
+--t2PE84nQ004687.1427292484/match.rustbucketrumble.com
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; match.rustbucketrumble.com
+Received-From-MTA: DNS; localhost.localdomain
+Arrival-Date: Wed, 25 Mar 2015 10:08:01 -0400
+
+Final-Recipient: RFC822; matt@reactorzero.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: DNS; smtpauth.hosting.earthlink.net
+Diagnostic-Code: SMTP; 550 5.7.1 <matt@reactorzero.com>... Relaying denied: You must check for new mail before sending mail.
+Last-Attempt-Date: Wed, 25 Mar 2015 10:08:04 -0400
+
+--t2PE84nQ004687.1427292484/match.rustbucketrumble.com
+Content-Type: message/rfc822
+
+Return-Path: <apache@rustbucketrumble.com>
+Received: from match.rustbucketrumble.com (localhost.localdomain [127.0.0.1])
+	by match.rustbucketrumble.com (8.14.4/8.14.4) with ESMTP id t2PE81nQ004685;
+	Wed, 25 Mar 2015 10:08:01 -0400
+Received: (from apache@localhost)
+	by match.rustbucketrumble.com (8.14.4/8.14.4/Submit) id t2PE81jq004684;
+	Wed, 25 Mar 2015 10:08:01 -0400
+Date: Wed, 25 Mar 2015 10:08:01 -0400
+Message-Id: <201503251408.t2PE81jq004684@match.rustbucketrumble.com>
+To: matt@reactorzero.com, qa@quantumsignal.com
+Subject: Rustbucket Rumble Feedback
+X-PHP-Originating-Script: 500:feedback.php
+From: beta@rustbucketrumble.com
+Reply-To: beta@rustbucketrumble.com
+X-Mailer: PHP/5.3.3
+
+rbr8(  ) says:
+
+The "How to Play" locked camera/weird tutorial bug just occurred.
+RBR version: 0.6.12 on WindowsPlayer
+
+/home/jcrawford/public_html/uploadedLogs/96.88.134.189-2015-03-23-10-05-38_3976.log
+
+
+--t2PE84nQ004687.1427292484/match.rustbucketrumble.com--
+
+
+--t2PE84nR004687.1427292484/match.rustbucketrumble.com--
+
+============================================

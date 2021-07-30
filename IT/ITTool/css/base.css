@@ -1,0 +1,470 @@
+body
+{
+	margin: 0px;
+	font-family: arial,sans-seif;
+	font-size: 10px;
+}
+
+table,td,th
+{
+}
+
+.ICONCELL { width: 24px; }
+
+.table_BASE {
+	text-align: center;
+}
+
+.td_NONE {
+}
+	
+.td_PENDING {
+	background: cyan;
+}
+.td_GOOD {
+	background: #e0f5ce;
+}
+
+.td_MISSING {
+	background: #fbf9b7;
+}
+
+.td_BAD {
+	background: #fac0c3;
+}
+
+.td_OBSOLETE {
+	background: #c0c0c0;
+}
+
+.unselect {
+	border: 2px solid transparent;
+}
+
+.select_PENDING {
+	background: cyan;
+	border: 1px solid cyan;
+}
+.select_GOOD {
+	background: #e0f5ce;
+	border: 2px solid green;
+}
+
+.select_MISSING {
+	background: #fbf9b7;
+	border: 1px solid #fbf9b7;
+}
+
+.select_BAD {
+	background: #fac0c3;
+	border: 2px solid red;
+}
+
+.select_OBSOLETE {
+	background: #c0c0c0;
+	border: 2px solid #808080;
+}
+
+.select_FIXING {
+	background: #dab2ff;
+	border: 2px solid purple;
+}
+
+.select_FIXED {
+	background: lightblue;
+	border: 2px solid blue;
+}
+
+
+.td_OLD {
+	background: #fac0c3;
+}
+
+.td_NA {
+	background: lightgrey;
+}
+
+.td_FIXED {
+	background: lightblue;
+}
+
+.td_FIXING {
+	background: #dab2ff;
+}	
+
+.td_OBSOLETE {
+	background: #c0c0c0;
+}
+
+.tr_READ {
+	background: #fbf9b7;
+}
+
+.TD_HOST_DEFAULT {
+	background: #F0F0F0;
+	text-align: center;
+}
+
+.TD_HOST_NO_INFO {
+	background: #D0D0E0;
+	text-align: center;
+}
+
+.TD_HOST_INFO  {
+	background: #F8F8F8;
+	text-align: center;
+}
+
+.TD_HOST_NO_STATUS {
+	background: #b0b0b0;
+	text-align: center;
+}
+
+.TD_HOST_ONLINE {
+	color: white;
+	background: green;
+	text-align: center;
+}
+
+.TD_HOST_OFFLINE {
+	background: yellow;
+	text-align: center;
+}
+
+.TD_HOST_NO_STATUS_DNS {
+	color: white;
+	background: red;
+	text-align: center;
+}
+
+
+.ALARM_NAK
+{
+	background: #fac0c3;
+}
+
+.ALARM_ACK
+{
+	background: green;
+}
+
+
+.td_SELECTED
+{
+	text-align: center;
+}
+
+.td_NOTSELECTED
+{
+	background: white;
+	text-align: center;
+}
+
+.tr_UNREAD {
+	background: #fac0c3;
+}
+
+.msgHidden {
+	display: none;
+}
+
+.msgVisible {
+	display: table-row;
+}
+
+.MSG_LABEL {
+	background: #C0C0C0;
+}
+
+.MSG_SUBJECT {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 12px 5px 5px 10px;
+	color: #222;
+	padding: 0;
+}
+
+.MSG_DATE {
+	float: right;
+	padding: 0;
+	margin: 5px 45px 5px 10px;
+	font-size: 12px;
+	
+}
+
+.MSG_FROM {
+	float: left;
+	padding: 0;
+	margin: 5px 5px 5px 10px;
+	font-size: 12px;
+}
+
+.MSG_DEL {
+	margin: 12px 45px 5px 10px;
+	float:right;
+}
+
+.INF_SECTION
+{
+	background: #808080;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 14px;
+	padding: 2px;
+	border: solid 1px #202020;
+}
+
+.INF_TITLE {
+	background: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 14px;
+	padding: 2px;
+	border: solid 1px #909090;
+}
+
+.INF_LABEL {
+	background: #F0F0F0;
+	width: 168px;
+	padding: 4px;
+	text-align: center;
+	font-size: 12px;
+	border: solid 1px #A0A0A0;
+	margin: 2px;
+}
+
+.INF_DIV {
+	width: 150px;
+	border: solid 1px #A0A0A0;
+	padding: 2px;
+	margin: 2px;
+	font-size: 12px;
+}
+
+.LINE_SEP {
+	border-bottom: solid 1px #A0A0A0;
+	margin: 5px;
+}
+
+.MSG_CONTAINER {
+	display: table;
+	width: 100%;
+	margin: 5px;
+}
+
+.MSG_BODY {
+	display: table-cell;
+	padding: 5px;
+}
+
+.MSG_STATES {
+	display: table-cell;
+	width: 160px;  
+}
+
+.MSG_SEP {
+	display: table-cell;
+	width: 4px;  
+	border-right: solid 1px #A0A0A0;
+}
+
+.ALARM_OUTER {
+	padding: 5px;
+	background: #F0F0F0;
+	border: solid 1px #A0A0A0;
+	margin: 2px 2px 5px 2px;
+}
+
+.ALARM_INNER {
+	border: solid 1px #A0A0A0;
+	padding: 0px;
+}
+
+.HOST_TITLE {
+}
+
+.HOST_CELL {
+	text-align: left;
+	border: 1px solid #DDDDDD;
+	padding: 1px 4px 1px 4px;
+}
+
+.HOST_CELL IMG {	
+	vertical-align: middle;
+}
+
+.HOST_CELL_HEADER {
+	text-align: left;
+	border: 1px solid #DDDDDD;
+}
+
+.HOST_DIV {
+	padding: 2px;
+}
+
+.HOST_ROW {
+	border: 1px solid #DDDDDD;
+}
+
+.OLD_HOST {
+	background: #fac0c3;
+}
+
+.INF_AGE {
+	width: 150px;
+	text-align: left;
+	border-top: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	vertical-align: middle;
+}
+
+.INF_AGE img
+{
+	vertical-align: middle;
+}
+
+.INF_NAME {
+	padding: 4px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+
+.INF_NAME img {
+	vertical-align: middle;
+}
+
+.INF_MSG {
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-top: 1px solid #F0F0F0;
+}
+
+.ROW_ALT0 {
+	background: #FCFCFF;
+}
+
+.ROW_ALT1 {
+	background: #F0F0FF;
+}
+
+#INFRA {
+	padding: 5px;
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+}
+
+.ALARM_ROW {
+}
+
+.ALARM_CELL {
+	padding: 5px;
+}
+
+.NO_SELECT, .SELECT {
+}
+
+.NO_SELECT {
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	border-bottom: 1px solid #bbbbbb;
+	width: 12%;
+	text-align: center;
+	background: #eaeaea;
+}
+
+.SELECT {
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	width: 12%;
+	text-align: center;
+	background: #FFFFFF;
+	font-weight: bold;
+}
+
+.HEADER {
+	border-collapse: collapse;
+	padding: 0px;
+	width: 100%;
+	background: white;
+	height: 32px;
+}
+
+.HEADER:first-child {
+	border-left: none;
+}
+
+.HEADER:last-child {
+	border-right: none;
+}
+
+.TOPAREA {
+    width: calc(100% - 40px);
+    position: fixed; 
+    top: 0;
+    height: 32px !important;
+	z-index:99;
+}
+
+.BODYAREA {
+   position:relative;
+    height: 100%;
+    width: 100%; /* Sizing - any length */
+    padding:40px 0 30px 0; /* Header height and footer height */
+    margin:0 auto 0 auto; /* Center content */
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+	overflow:auto;
+}
+
+#BANNER {
+	padding: 0px 0px 5px;
+	text-align: right;
+	color: black;
+}
+
+#ALARMS, #INFRA {
+	margin: 20px;
+	width: calc(100% - 40px);
+}
+
+#HOSTS
+{
+	width: calc(100% - 160px);
+	margin: 0px 0px 80px 80px;
+	border: 1px solid #CCCCCC;
+	border-collapse: collapse;
+}
+
+th {
+	color: #fff;
+	padding: 10px;
+	background-color: #272727;
+	font-weight: normal;
+}
+
+#watermark
+{
+ position:fixed;
+ bottom:15px;
+ right:15px;
+ opacity:0.5;
+ z-index:99;
+}
+
+.DNSTable {
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+	width:calc(100% - 40px);
+	margin: 20px 20px 20px 20px;
+}
+
+.DNSCell {
+	border: 1px solid #CCCCCC;
+}
+
+.HOST_LINK {
+	text-decoration:none;
+}

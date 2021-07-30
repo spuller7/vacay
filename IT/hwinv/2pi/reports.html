@@ -1,0 +1,350 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://kit.fontawesome.com/625a0aa3b5.js" crossorigin="anonymous"></script>
+	<script src="./js/data.js"></script>
+	<script src="./js/utils.js"></script>
+	<script src="./js/reports.js"></script>
+	<title>QSAI 2Pi Reports</title>
+</head>
+
+<body>
+<div id="wrapper">
+
+	<!-- Global Navigation Wrapper include file: nav.js -->
+	<div id="nav-wrapper">
+	</div>
+
+	<div id="content-wrapper">
+
+		<div id="header">
+			<h1>Reports</h1>
+		</div>
+
+		<div id="content">
+			<div class="reports">
+				<div class="reports-flex">
+					<div class="reports-names">
+						<h3>Shortcuts</h3>
+						<div class="reports-buttons-wrapper" id="shortcut-buttons">
+							<!--button class="button-round" id="my-employees" title="Show my employees"><i class="fas fa-user-circle"></i></button>
+							<button class="button-round" id="all-employees" title="Show all employees"><i class="fas fa-school"></i></button>
+							<button class="button-round" id="my-solicitations" title="Show my solicitations"><i class="fas fa-inbox"></i></button>
+							<button class="button-round" id="my-reviews" title="Show my reviews"><i class="far fa-envelope"></i></button>
+							<button class="button-round" id="clear-search" title="Clear search"><i class="far fa-times-circle"></i></button-->
+						</div>
+					</div>
+					<div class="reports-names">
+						<h3>Name</h3>
+						<div class="reports-form-input">
+							<form>
+								<input type="text" id="search-text" placeholder="Name...|" size="25"><br />
+								<div id="employee-checkboxes">
+									<!-- Generated content will go here-->
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="reports-date">
+						<h3>Date Range</h3>
+						<!--input id="date" type="date" value="Date"-->
+						<input id="datepicker" autocomplete="off">
+					</div>
+
+				</div>
+			</div>
+			<div class="sticky-top">
+				<div class="reports-sort">
+					<div class="reports-sort-col1">
+						<h4>Colleague</h4>
+					</div>
+					<div class="reports-sort-col1">
+						<h4>Date</h4>
+					</div>
+					<div class="reports-sort-col1">
+						<h4>Disposition</h4>
+					</div>
+					<div class="reports-sort-col1">
+						<h4>Submitter</h4>
+					</div>
+					<div class="reports-sort-col1">
+						<h4>Role</h4>
+					</div>
+					<div class="reports-sort-col1">
+						<h4>Solicitor</h4>
+					</div>
+					<div class="reports-sort-col2">
+						<h4>Comment</h4>
+					</div>
+				</div>
+			</div>
+			<div id="reports-content">
+				<!-- <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. </h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Niels Bohr</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. Phasellus tellus lectus, pretium et massa eu, commodo finibus urna. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div>
+                <div class="reports-results">
+                    <div class="reports-sort-col1">
+                    <h4 class="reports-name">Last Result</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>4/15/2020</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4><span title="Good"><i class="far fa-smile"></i></span></h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Max Born</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Manager</h4>
+                    </div>
+                    <div class="reports-sort-col1">
+                    <h4>Sir Ernest Rutherford</h4>
+                    </div>
+                    <div class="reports-sort-col2">
+                    <h4>Aliquam placerat vulputate neque, ac efficitur libero venenatis sed. Nulla elit elit, consectetur in enim vitae, aliquam laoreet arcu. In rutrum ante mauris, feugiat semper tortor ornare id.</h4>
+                    </div>
+                </div> -->
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="footer">
+			<div id="unsolicited">
+				<button>Export</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
