@@ -40,7 +40,7 @@ class Router
 
         // URL path without the domain and query parameters
         $path = $this->request->getPath();
-
+        
         // Redirect to login page if not logged in
         // if (!Application::$app->loggedInUser)
         // {
