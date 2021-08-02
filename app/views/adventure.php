@@ -99,7 +99,7 @@ var searchController = new Vue({
 
             $.ajax({
                 // url directed to a the getExamplesTable function in the datatable.php in /contollers
-                url: "/adventure/discover",
+                url: "http://vacay-env.eba-rmdtx3dh.us-east-2.elasticbeanstalk.com/adventure/discover",
                 type: 'GET',
                 data: data,
                 success: function(res)
