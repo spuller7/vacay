@@ -1,8 +1,0 @@
-Build inst-nounits to read from the current sensor with something like:
-gcc -o inst-nounits inst-nounits.c -lphidget22
-
-This gets called from the nodejs program b.js so you need it! You'll need to get the node modules for node-xmpp in order to use b.js and also the sendmail command needs to work (or you can rewrite it to use nodemailer) so good luck with that.
-
-Then install b.js in your crontab with something like this:
-* * * * * (cd /root/workspace/burglar; . /root/.bashrc; node b.js 2>/dev/null)
-30 8 * * * (rm /root/workspace/burglar/amps.json)
