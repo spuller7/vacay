@@ -96,7 +96,6 @@ abstract class DbModel extends Model
         {
             if (in_array($key, $attributes))
             {
-                error_log('her');
                 $this->{$key} = $value;
             }
         }
