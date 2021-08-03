@@ -1,5 +1,10 @@
 <div id="searchPage" class="background">
     <div class="container" style="margin: auto;">
+
+        <div class="row">
+            <button>+ Add Adventure</button>
+        </div>
+
         <div class="row">
             <div class="card" style="width: 100%">
 

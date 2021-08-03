@@ -2,6 +2,7 @@
     require_once '../app/require.php';
 
     use app\controllers\AdventureController;
+    use app\controllers\SearchController;
 
     use app\core\Application;
     use app\classes\Route;
@@ -23,7 +24,8 @@
 
     // Route setup mapping path to callback to get view
     $routes = [
-        '/' => [AdventureController::class, 'index'],
+        '/' => [SearchController::class, 'index'],
+        '/search' => [SearchController::class, 'index'],
         '/adventure' => [AdventureController::class, 'index'],
     ];
 
