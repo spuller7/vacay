@@ -344,8 +344,8 @@ function showLoader()
     }
     if(loaded >= 100) {
         clearInterval(runloader);
-        //$('#loader').hide();
-        //$('#result').show();
+        $('#loader').hide();
+        $('#result').show();
     }
     }
     var runloader = setInterval(loader,10); 
