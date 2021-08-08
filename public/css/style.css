@@ -214,11 +214,10 @@ label {
   }
   
   #filters .btn-primary.disabled, .btn-primary:disabled {
-    color: #fff;
     /* background-color: #007bff; */
     /* border-color: #007bff; */
-    background: none;
-    color: black;
+    background: none !important;
+    color: black !important;
   }
 
 
