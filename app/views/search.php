@@ -48,10 +48,22 @@
                                 <div class="col-12">
                                     <label>Price</label>
                                     <div style="display: block;">
-                                        <button class="btn btn-primary">Free</button>
-                                        <button class="btn btn-primary">$</button>
-                                        <button class="btn btn-primary">$$</button>
-                                        <button class="btn btn-primary">$$$</button>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" id="freeCheckbox" value="free" checked>
+                                            <label for="freeCheckbox"> Free </label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" id="oneDollarCheckbox" value="oneDollar" checked>
+                                            <label for="oneDollarCheckbox"> $ </label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" id="twoDollarCheckbox" value="twoDollar" checked>
+                                            <label for="twoDollarCheckbox"> $$ </label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" id="threeDollarCheckbox" value="threeDollar" checked>
+                                            <label for="threeDollarCheckbox"> $$$ </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -74,6 +86,40 @@
                             <div class="col-6">
                                 <div class="infoHeader">Hours</div>
                                 <p>{{location['hours']}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="specialResult" class="container" style="display: none;">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>{{location['title']}}</h1>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <img :src="location['photo']" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="infoHeader">Address</div>
+                                <p>{{location['address']}}</p>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="infoHeader">Hours</div>
+                                <p style="color: green; font-weight: bold;">{{location['hours'] ? 'Open' : 'Closed'}}</p>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="infoHeader">Phone Number</div>
+                                <a style="color: blue">{{location['phone']}}</a>
+                            </div>
+
+                            <div class="col-6">
                             </div>
                         </div>
                     </div>
@@ -100,7 +146,9 @@ var searchController = new Vue({
         location: {
             'title': 'test title',
             'address': 'test address',
-            'hours': 'hours'
+            'hours': 'hours',
+            'photo': '',
+            'phone': ''
         },
     },
     methods: {
@@ -108,26 +156,48 @@ var searchController = new Vue({
             let data = {};
             let controller = this;
 
+            data['free'] = $('#freeCheckbox').is(':checked') ? 1 : 0;
+            data['oneDollar'] = $('#oneDollarCheckbox').is(':checked') ? 1 : 0;
+            data['twoDollar'] = $('#twoDollarCheckbox').is(':checked') ? 1 : 0;
+            data['threeDollar'] = $('#threeDollarCheckbox').is(':checked') ? 1 : 0;
+
             $.ajax({
                 // url directed to a the getExamplesTable function in the datatable.php in /contollers
-                url: "/adventure/discover",
+                url: "/search/discover",
                 type: 'GET',
                 data: data,
                 success: function(res)
                 {
                     if (res.success)
                     {
-                        let numResults = res.response.items.length;
+                        if (!res.specialPlace)
+                        {
+                            let numResults = res.response.items.length;
 
-                        let choiceIndex = Math.floor(Math.random() * numResults);
-                        let adventure = res.response.items[choiceIndex];
-                        console.log(adventure);
-                        searchController.location['title'] = adventure['title'];
-                        searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
-                        searchController.location['address'] = adventure['address']['label'];
+                            let choiceIndex = Math.floor(Math.random() * numResults);
+                            let adventure = res.response.items[choiceIndex];
+                            searchController.location['title'] = adventure['title'];
+                            searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
+                            searchController.location['address'] = adventure['address']['label'];
 
-                        $('#search').hide();
-                        $('#result').show();
+                            $('#search').hide();
+                            $('#result').show();
+                        }
+                        else
+                        {
+                            adventure = res.response.result;
+                            searchController.location['title'] = adventure['name'];
+                            searchController.location['hours'] = adventure['opening_hours']['open_now'];
+                            searchController.location['address'] = adventure['formatted_address'];
+                            searchController.location['phone'] = adventure['formatted_phone_number'];
+
+                            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
+                            searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][0]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
+
+                            $('#search').hide();
+                            $('#specialResult').show();
+                        }
+                        
                     }
                     else
                     {
