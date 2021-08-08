@@ -345,7 +345,7 @@ function showLoader()
     if(loaded >= 100) {
         clearInterval(runloader);
         $('#loader').hide();
-        $('#result').show();
+        $('#specialResult').show();
     }
     }
     var runloader = setInterval(loader,10); 
