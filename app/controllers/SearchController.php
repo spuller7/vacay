@@ -56,7 +56,7 @@ class SearchController extends Controller {
         else if (!$_GET['free'] && !$_GET['oneDollar'] && $_GET['twoDollar'] && !$_GET['threeDollar'])
         {
             $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJ26Km7jyuPIgRMMksnW9KTx0';
+            $place_id = 'ChIJx8yeAT2uPIgRjemtDnqZt4U';
             $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
         }
         else if (!$_GET['free'] && !$_GET['oneDollar'] && !$_GET['twoDollar'] && $_GET['threeDollar'])

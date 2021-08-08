@@ -31,43 +31,48 @@
                                     <div class="filters">Filters</div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label>Categories</label>
-                                    <div style="display: block;">
-                                        <button class="btn btn-primary">Breakfast</button>
-                                        <button class="btn btn-primary">Lunch</button>
-                                        <button class="btn btn-primary">Dinner</button>
-                                        <button class="btn btn-primary">Coffee & Tea</button>
-                                        <button class="btn btn-primary">Sweets</button>
-                                        <button class="btn btn-primary">21+</button>
+                            <div id="filters">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label>Categories</label>
+                                        <div style="display: block;">
+                                            <button class="btn btn-primary disabled">Breakfast</button>
+                                            <button class="btn btn-primary disabled">Lunch</button>
+                                            <button class="btn btn-primary disabled">Dinner</button>
+                                            <button class="btn btn-primary disabled">Coffee & Tea</button>
+                                            <button class="btn btn-primary disabled">Sweets</button>
+                                            <button class="btn btn-primary disabled">21+</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div>          
                             <div class="row">
                                 <div class="col-12">
                                     <label>Price</label>
                                     <div style="display: block;">
-                                        <div class="checkbox checkbox-inline">
-                                            <input type="checkbox" id="freeCheckbox" value="free" checked>
-                                            <label for="freeCheckbox"> Free </label>
-                                        </div>
-                                        <div class="checkbox checkbox-inline">
-                                            <input type="checkbox" id="oneDollarCheckbox" value="oneDollar" checked>
-                                            <label for="oneDollarCheckbox"> $ </label>
-                                        </div>
-                                        <div class="checkbox checkbox-inline">
-                                            <input type="checkbox" id="twoDollarCheckbox" value="twoDollar" checked>
-                                            <label for="twoDollarCheckbox"> $$ </label>
-                                        </div>
-                                        <div class="checkbox checkbox-inline">
-                                            <input type="checkbox" id="threeDollarCheckbox" value="threeDollar" checked>
-                                            <label for="threeDollarCheckbox"> $$$ </label>
-                                        </div>
+                                        <button id="freeCheckbox" class="btn btn-primary disabled">Free</button>
+                                        <button id="oneDollarCheckbox" class="btn btn-primary disabled">$</button>
+                                        <button id="twoDollarCheckbox" class="btn btn-primary disabled">$$</button>
+                                        <button id="threeDollarCheckbox" class="btn btn-primary disabled">$$$</button>
                                     </div>
                                 </div>
                             </div>
+</div>
                         </form>
+                    </div>
+
+                    <div id="loader" class="container" style="display: none;">
+                        <div class="row" style="margin:15px;">
+                            <div class="col-12">
+                                <h5 style="text-align: center;">Finding the best adventure...</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="loader">
+                            <div class="bar">
+                                <div class="loaded"></div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="result" class="container" style="display: none;">
@@ -156,10 +161,12 @@ var searchController = new Vue({
             let data = {};
             let controller = this;
 
-            data['free'] = $('#freeCheckbox').is(':checked') ? 1 : 0;
-            data['oneDollar'] = $('#oneDollarCheckbox').is(':checked') ? 1 : 0;
-            data['twoDollar'] = $('#twoDollarCheckbox').is(':checked') ? 1 : 0;
-            data['threeDollar'] = $('#threeDollarCheckbox').is(':checked') ? 1 : 0;
+            showLoader();
+
+            data['free'] = $('#freeCheckbox').hasClass('disabled') ? 0 : 1;
+            data['oneDollar'] = $('#oneDollarCheckbox').hasClass('disabled') ? 0 : 1;
+            data['twoDollar'] = $('#twoDollarCheckbox').hasClass('disabled') ? 0 : 1;
+            data['threeDollar'] = $('#threeDollarCheckbox').hasClass('disabled') ? 0 : 1;
 
             $.ajax({
                 // url directed to a the getExamplesTable function in the datatable.php in /contollers
@@ -194,8 +201,6 @@ var searchController = new Vue({
                             $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
                             searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][0]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
 
-                            $('#search').hide();
-                            $('#specialResult').show();
                         }
                         
                     }
@@ -287,6 +292,20 @@ $(function() {
         searchController.getAdventure();
     });
 
+    $('#filters .btn').on('click', function(e)
+    {
+        e.preventDefault();
+        target = $(this);
+        if(target.hasClass('disabled'))
+        {
+            target.removeClass('disabled');
+        }
+        else
+        {
+            target.addClass('disabled');
+        }
+    });
+
     
   /*execute a function when someone clicks in the document:*/
   document.addEventListener("click", function (e) {
@@ -302,5 +321,38 @@ function closeAllLists(elmnt) {
       }
     }
   }
+
+function showLoader()
+{
+    $('#search').hide();
+    $('#loader').show();
+    //okpt("Galaxy Progress Loader");
+    for(var i = 0; i < 40; i++) {
+    var radius = (rnd(1600,3400)/10);
+    var modifier = radius/160;
+    $(".loader").append("<div class=\"spinner\" style=\"animation: bar " + 4*modifier + "s linear infinite; height: " + radius + "px; animation-delay: -" + (rnd(40,80)/10) + "s\"></div>");
+    }
+
+    var loaded = 0;
+    function loader() {
+    if(rnd(0,1) == 1) {
+        loaded++;
+        $(".spinner:nth-child(" + Math.floor(loaded/2.5) + ")").css("height", "0px");
+        $(".loaded").css("width", (loaded + "%"));
+    }
+    if(loaded >= 100) {
+        clearInterval(runloader);
+        $('#loader').hide();
+        $('#result').show();
+    }
+    }
+    var runloader = setInterval(loader,50); 
+
+    function rnd(m,n) {
+    m = parseInt(m);
+    n = parseInt(n);
+    return Math.floor( Math.random() * (n - m + 1) ) + m;
+    }
+}
 
 </script>
