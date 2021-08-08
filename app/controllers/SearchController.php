@@ -39,10 +39,18 @@ class SearchController extends Controller {
 
         $ajax->specialPlace = true;
         $fields = '&fields=name,rating,formatted_phone_number,opening_hours,formatted_address,photo';
-        if (!$_GET['free'] && $_GET['oneDollar'] && !$_GET['twoDollar'] && !$_GET['threeDollar'])
+
+        if ($_GET['free'] && !$_GET['oneDollar'] && !$_GET['twoDollar'] && !$_GET['threeDollar'])
         {
             $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJgxFrSUSuPIgRNMHA3whSTiA';
+            $place_id = 'ChIJR3mTeOSrPIgRF0CehvEp8Jg';
+            $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
+        }
+
+        else if (!$_GET['free'] && $_GET['oneDollar'] && !$_GET['twoDollar'] && !$_GET['threeDollar'])
+        {
+            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
+            $place_id = 'ChIJ8W1G1UWuPIgR6Jetrkwtshk';
             $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
         }
         else if (!$_GET['free'] && !$_GET['oneDollar'] && $_GET['twoDollar'] && !$_GET['threeDollar'])
