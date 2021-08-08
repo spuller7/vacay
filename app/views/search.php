@@ -187,8 +187,6 @@ var searchController = new Vue({
                             searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
                             searchController.location['address'] = adventure['address']['label'];
 
-                            $('#search').hide();
-                            $('#result').show();
                         }
                         else
                         {

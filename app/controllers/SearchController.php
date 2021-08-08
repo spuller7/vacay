@@ -82,7 +82,7 @@ class SearchController extends Controller {
         $ajax = new AjaxResponse();
         $query = json_encode($_GET['query']);
         $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-        $request_url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='.$query.'&inputtype=textquery&fields=formatted_address,name&locationbias=circle:2000@42.2808,-83.7430&key='.$key;
+        $request_url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='.$query.'&inputtype=textquery&fields=formatted_address,name&locationbias=circle:2000@42.2917,-85.5872&key='.$key;
         $ajax->query = $_GET['query'];
         $ajax->response  = json_decode(file_get_contents($request_url), true);
         $ajax->success = true;
