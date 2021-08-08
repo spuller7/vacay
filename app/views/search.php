@@ -199,7 +199,7 @@ var searchController = new Vue({
                             searchController.location['phone'] = adventure['formatted_phone_number'];
 
                             $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-                            searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][0]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
+                            searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][1]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
 
                             //$('#search').hide();
                             //$('#specialResult').show();
