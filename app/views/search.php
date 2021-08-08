@@ -161,7 +161,7 @@ var searchController = new Vue({
             let data = {};
             let controller = this;
 
-            showLoader();
+            //showLoader();
 
             data['free'] = $('#freeCheckbox').hasClass('disabled') ? 0 : 1;
             data['oneDollar'] = $('#oneDollarCheckbox').hasClass('disabled') ? 0 : 1;
@@ -187,6 +187,8 @@ var searchController = new Vue({
                             searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
                             searchController.location['address'] = adventure['address']['label'];
 
+                            $('#search').hide();
+                            $('#result').show();
                         }
                         else
                         {
@@ -199,6 +201,8 @@ var searchController = new Vue({
                             $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
                             searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][0]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
 
+                            $('#search').hide();
+                            $('#specialResult').show();
                         }
                         
                     }
