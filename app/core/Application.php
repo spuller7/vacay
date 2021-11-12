@@ -39,7 +39,7 @@ class Application
 
         // $this->users = User::getAllUsers();
 
-        //$this->db = new Database($config['db']);
+        $this->db = new Database($config['db']);
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);

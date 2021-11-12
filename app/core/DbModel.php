@@ -10,19 +10,62 @@ abstract class DbModel extends Model
     abstract public function attributes(): array;
     abstract public function primaryKey(): string;
 
+    /**
+     * Save
+     *
+     * @return void
+     */
     public function save()
     {
         $tableName = $this->tableName();
         $attributes = $this->attributes();
-        $params = array_map(fn($attr) => ":$attr", $attributes);
+
+        // Make attributes lower case if database has uppercase name convention
+        $lowercase_attributes = array_map('strtolower', $attributes);
+
+        $params = array_map(fn($attr) => ":".$attr, $lowercase_attributes);
+
+        if ($this->id)
         $statement = self::prepare("INSERT INTO $tableName (".implode(',', $attributes).") VALUES (".implode(',', $params).")");
-        foreach ($attributes as $attribute)
+        foreach ($lowercase_attributes as $attribute)
         {
+            if ($this->{$attribute} instanceof DateTime)
+            {
+                $this->{$attribute} = $this->{$attribute}->format('Y-m-d H:i:s');
+            }
+
             $statement->bindValue(":$attribute", $this->{$attribute});
         }
 
         $statement->execute();
-        return true;
+        return static::fetchPDOObject($statement);
+    }
+
+    // Execute sql statement and modify object returned
+    /**
+     * fetchPDOObject
+     *
+     * @param [type] $statement
+     * @return void
+     */
+    public static function fetchPDOObject($statement)
+    {
+        $statement->execute();
+        $obj = $statement->fetchObject(static::class);
+
+        if (!$obj)
+        {
+            return false;
+        }
+
+        // If the object's primary key isn't 'id', then assign 'id' to the primary key
+        // So that it's in every data object across the application
+        if ($obj->{static::primaryKey()} && static::primaryKey() !== 'id')
+        {
+            $obj->id = $obj->{static::primaryKey()};
+        }
+
+        return $obj;
     }
 
     /**
@@ -35,16 +78,34 @@ abstract class DbModel extends Model
     {
         $tableName = static::tableName();
 
+        // Build string for WHERE statement
         $attributes = array_keys($conditions);
         $sql = implode("AND" ,array_map(fn($attr) => "$attr = :$attr", $attributes));
+
+        // Create SELECT statement string
         $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
+
         foreach ($conditions as $key => $item)
         {
             $statement->bindValue(":$key", $item);
         }
 
-        $statement->execute();
-        return $statement->fetchObject(static::class);
+        return static::fetchPDOObject($statement);
+    }
+
+    /**
+     * findOneByID
+     *
+     * @param int $id
+     * @return object
+     */
+    public static function findOneByID($id)
+    {
+        $tableName = static::tableName();
+        $statement = self::prepare("SELECT * FROM $tableName WHERE ".static::primaryKey()." = :id");
+        $statement->bindValue(":id", $id);
+        
+        return static::fetchPDOObject($statement);
     }
     
     /**

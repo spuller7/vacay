@@ -4,25 +4,23 @@ namespace app\models;
 use app\core\DbModel;
 
 /**
- * Feedback
+ * Address
  * 
  * Documented example of how Models should look
  * They should be paired with a table in the database
  */
-class Feedback extends DbModel {
+class Address extends DbModel {
     
     // Each column in the database should be named the same and listed as a variable here:
     // They must have some default value, or assigned in a constructor
-    public string $solicitation_date = '';
-    public string $solicitation_reason = '';
-    public string $solicitor_id = '';
-    public string $commenter_id = '';
-    public string $subject_id = '';
-    public string $comment = '';
-    public string $feedback_date = '';
-    public string $disposition = '';
-    public string $type = '';
-    public string $closed_date = '';
+    public $adventure_id = null;
+    public $address = null;
+    public $city = null;
+    public $state = null;
+    public $zipcode = null;
+    public $country = null;
+    public $latitude = null;
+    public $longitude = null;
 
     /**
      * Table Name
@@ -33,7 +31,7 @@ class Feedback extends DbModel {
      */
     public static function tableName(): string
     {
-        return 'FEEDBACK';
+        return 'addresses';
     }
 
     /**
@@ -44,7 +42,7 @@ class Feedback extends DbModel {
      */
     public function primaryKey(): string
     {
-        return 'FEEDBACK_ID';
+        return 'id';
     }
 
     /**
@@ -56,20 +54,13 @@ class Feedback extends DbModel {
      */
     public function attributes(): array
     {
-        return [
-            'solicitation_date', 'solicitation_reason', 'solicitor_id',
-            'commenter_id', 'subject_id', 'comment', 'feedback_date', 'disposition', 
-            'type', 'closed_date'
-        ];
+        return ['adventure_id', 'address', 'city', 'state',
+                'zipcode', 'country', 'latitude', 'longitude'];
     }
 
     public function rules(): array
     {
-        return [
-            'subject_id' => [self::RULE_REQUIRED],
-            'comment' => [self::RULE_REQUIRED],
-            'disposition' => [self::RULE_REQUIRED]
-        ];
+        return [];
     }
 
     public function save()

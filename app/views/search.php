@@ -3,11 +3,11 @@
 
         <div class="row">
             <div class="autocomplete" style="display:inline-flex; margin-left:auto;">
-                <input id="commemorateInput" type="text" style="width:20vw;" class="form-control" name="" value='' placeholder='Search For Your Favorite Spots'>
+                <input id="suggestionInput" type="text" style="width:20vw;" class="form-control" name="" value='' data-place_id='' placeholder='Search For Your Favorite Spots'>
 
                 <div></div>
 
-                <button style="white-space: nowrap;">Commemorate Adventure</button>
+                <button id="recommendButton" style="white-space: nowrap;">Recommend Adventure</button>
             </div>
         </div>
 
@@ -148,8 +148,9 @@ var searchController = new Vue({
             'address': 'test address',
             'hours': 'hours',
             'photo': '',
-            'phone': ''
+            'phone': '',
         },
+        suggested_place_id : ''
     },
     methods: {
         getAdventure: function() {
@@ -236,27 +237,50 @@ var searchController = new Vue({
                         a = document.createElement("DIV");
                         a.setAttribute("class", "autocomplete-items");
                         /*append the DIV element as a child of the autocomplete container:*/
-                        document.getElementById('commemorateInput').parentNode.appendChild(a);
+                        document.getElementById('suggestionInput').parentNode.appendChild(a);
 
                         for (i = 0; i < suggestions.length; i++) {
                                 /*create a DIV element for each matching element:*/
-                                b = document.createElement("DIV");
+                                b = document.createElement("div");
+                                b.dataset.name = suggestions[i].name;
+                                b.dataset.place_id = suggestions[i].place_id;
+                                b.classList.add('suggestion')
+                                
                                 /*make the matching letters bold:*/
                                 b.innerHTML = "<p>" + suggestions[i].name + ' - ' + suggestions[i].formatted_address + "</strong>";
-                                //b.innerHTML += arr[i].substr(val.length);
-                                /*insert a input field that will hold the current array item's value:*/
-                                console.log(b);
-                                b.innerHTML += "<input type='hidden' value='" + suggestions[i].name + "'>";
-                                /*execute a function when someone clicks on the item value (DIV element):*/
+                                a.appendChild(b);
+
                                 b.addEventListener("click", function(e) {
-                                    /*insert the value for the autocomplete text field:*/
-                                    $('#commemorateInput').value = this.getElementsByTagName("input")[0].value;
-                                    /*close the list of autocompleted values,
-                                    (or any other open lists of autocompleted values:*/
+                                    $('#suggestionInput').val(this.dataset.name);
+                                    searchController.suggested_place_id = this.dataset.place_id;
                                     closeAllLists();
                                 });
-                                a.appendChild(b);
                         }
+                    }
+                    else
+                    {
+                        console.log("Unexpected Error");
+                    }
+                }
+
+            });
+        },
+
+        submitRecommendation: function()
+        {
+            let data = {};
+            data['place_id'] = searchController.suggested_place_id;
+
+            $.ajax({
+                // url directed to a the getExamplesTable function in the datatable.php in /contollers
+                url: "/search/recommend_place",
+                type: 'POST',
+                data: data,
+                success: function(res)
+                {
+                    if (res.success)
+                    {
+                        
                     }
                     else
                     {
@@ -271,15 +295,20 @@ var searchController = new Vue({
 
 // Jquery event handler functions
 $(function() {
+
     $('#search-examples-button').on('click', function() {
         $('#search-examples-form').submit();
     });
 
-    $('#commemorateInput').on('input', function() {
+    $('#suggestionInput').on('input', function() {
         if (this.value.length > 2)
         {
             searchController.getPlaceSuggestions(this.value);
         }
+    });
+
+    $('#recommendButton').on('click', function(e) {
+        searchController.submitRecommendation();
     });
 
     $('#exploreButton').on('click', function(e) {
@@ -290,7 +319,7 @@ $(function() {
     
   /*execute a function when someone clicks in the document:*/
   document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
+      //closeAllLists(e.target);
   });
 });
 

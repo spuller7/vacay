@@ -4,17 +4,13 @@ namespace app\models;
 use app\core\DbModel;
 
 /**
- * Feedback
- * 
- * Documented example of how Models should look
- * They should be paired with a table in the database
+ * Adventure
  */
-class ReviewerAssignment extends DbModel {
+class Category extends DbModel {
     
     // Each column in the database should be named the same and listed as a variable here:
     // They must have some default value, or assigned in a constructor
-    public string $reviewer_id = '';
-    public string $employee_id = '';
+    public string $name = '';
 
     /**
      * Table Name
@@ -25,7 +21,7 @@ class ReviewerAssignment extends DbModel {
      */
     public static function tableName(): string
     {
-        return 'REVIEWER_ASSIGNMENT';
+        return 'categories';
     }
 
     /**
@@ -48,16 +44,12 @@ class ReviewerAssignment extends DbModel {
      */
     public function attributes(): array
     {
-        return [
-            'REVIEWER_ID', 'EMPLOYEE_ID'
-        ];
+        return ['name'];
     }
 
     public function rules(): array
     {
-        return [
-
-        ];
+        return [];
     }
 
     public function save()
@@ -89,11 +81,5 @@ class ReviewerAssignment extends DbModel {
     public function afterSetAttributes()
     {
         // Do something
-    }
-
-    public static function findAllById($id): array
-    {
-        $subjects = ReviewerAssignment::findAll(['REVIEWER_ID' => $id]);
-        return [];
     }
 }
