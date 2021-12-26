@@ -11,10 +11,10 @@ use app\core\GoogleAPI;
 use app\core\HereAPI;
 
 use app\models\Adventure;
+use app\models\AdventureHereCategoryMap;
 use app\models\Address;
-
-use app\models\LoginForm;
-use GuzzleHttp\Client;
+use app\models\HereCategory;
+use app\models\Recommendation;
 
 class SearchController extends Controller {
     
@@ -43,43 +43,34 @@ class SearchController extends Controller {
         
         $ajax = new AjaxResponse();
 
-        $ajax->specialPlace = true;
-        $fields = '&fields=name,rating,formatted_phone_number,opening_hours,formatted_address,photo';
+        $query = "  SELECT * FROM adventures
+                    INNER JOIN adventure_here_category_map AS ahcm ON ahcm.adventure_id = adventures.id
+                    INNER JOIN here_categories ON here_categories.id = ahcm.here_category_id
+                    WHERE
+                        here_categories.id IN (SELECT here_categories.id FROM here_categories
+                        INNER JOIN here_category_category_map AS hccm ON hccm.here_category_id = here_categories.id
+                        INNER JOIN categories ON hccm.category_id = categories.id
+                        WHERE 1=1 ";
+        $params = [];
 
-        if ($_GET['free'] && !$_GET['oneDollar'] && !$_GET['twoDollar'] && !$_GET['threeDollar'])
+        if ($_POST['location'])
         {
-            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJR3mTeOSrPIgRF0CehvEp8Jg';
-            $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
+
+        }
+        if ($price_levels = $_POST['price_levels'])
+        {
+            $query .= " AND price_level IN (:price_levels)";
+            $params['price_levels'] = implode(', ', $price_levels);;
+        }
+        if ($categories = $_POST['categories'])
+        {
+            $query .= "categories.id IN (:categories))";
+            $params['categories'] = implode(', ', $categories);
         }
 
-        else if (!$_GET['free'] && $_GET['oneDollar'] && !$_GET['twoDollar'] && !$_GET['threeDollar'])
-        {
-            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJ8W1G1UWuPIgR6Jetrkwtshk';
-            $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
-        }
-        else if (!$_GET['free'] && !$_GET['oneDollar'] && $_GET['twoDollar'] && !$_GET['threeDollar'])
-        {
-            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJx8yeAT2uPIgRjemtDnqZt4U';
-            $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
-        }
-        else if (!$_GET['free'] && !$_GET['oneDollar'] && !$_GET['twoDollar'] && $_GET['threeDollar'])
-        {
-            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-            $place_id = 'ChIJu9W4fD-uPIgRKLcd_YjV04s';
-            $ajax->response = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/details/json?place_id='.$place_id.$fields.'&key='.$key), true);
-        }
-        else
-        {
-            $ajax->specialPlace = false;
-            $key = 'S1W-ieZyern54fLk4CPDCu87ugxJ0rE4YAVmryZHwgQ';
-            $ajax->response  = json_decode(file_get_contents('https://discover.search.hereapi.com/v1/discover?in=circle:42.2808,-83.7430;r=30000&q=restaurants&limit=100&apiKey='.$key), true);
-        }
+        $adventures = Adventure::query($query, $params);
 
         $ajax->success = true;
-
         $ajax->send();
     }
 
@@ -87,10 +78,9 @@ class SearchController extends Controller {
     {
         $ajax = new AjaxResponse();
         $query = json_encode($_GET['query']);
-        $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-        $request_url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='.$query.'&inputtype=textquery&fields=formatted_address,name,place_id&locationbias=circle:2000@42.2808,-83.7430&key='.$key;
+        $request_url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query='.urlencode($query).'&locationbias=circle:2000@42.2808,-83.7430';
         $ajax->query = $_GET['query'];
-        $ajax->response  = json_decode(file_get_contents($request_url), true);
+        $ajax->response  = GoogleAPI::get($request_url)['results'] ?: null;
         $ajax->success = true;
 
         $ajax->send();
@@ -101,12 +91,11 @@ class SearchController extends Controller {
 
         $ajax = new AjaxResponse();
         $google_place_id = $_POST['place_id'];
-        $adventure = Adventure::findOneByID($google_place_id);
+        $adventure = Adventure::findOne(['google_place_id' => $google_place_id]);
 
         // Add new location to database
         if (!$adventure)
         {
-            error_log('Creating Adventure...');
             $adventure = new Adventure();
             $address = new Address();
             $adventure->google_place_id = $google_place_id;
@@ -114,7 +103,7 @@ class SearchController extends Controller {
             // Get geolocation of Place from Google
             $fields = 'place_id,address_components,geometry,price_level';
             $request_url = 'https://maps.googleapis.com/maps/api/place/details/json?fields='.$fields.'&place_id='.$google_place_id;
-            $results = GoogleAPI::get($request_url);
+            $results = GoogleAPI::get($request_url)['result'];
 
             if ($results['price_level'])
             {
@@ -159,7 +148,7 @@ class SearchController extends Controller {
             $here_categories = [];
 
             // Find Here Place ID with coordinates
-            $request_url = 'https://discover.search.hereapi.com/v1/discover?at='.$address->latitude.'%2C'.$address->longitude.'&lang=en-US';
+            $request_url = 'https://discover.search.hereapi.com/v1/discover?at='.$address->latitude.'%2C'.$address->longitude.'&q=restaurant&lang=en-US';
             $results = HereAPI::get($request_url);
 
             if ($results)
@@ -173,7 +162,9 @@ class SearchController extends Controller {
                 }
             }
 
-            if ($adventure->save())
+            $adventure = $adventure->save();
+
+            if ($adventure)
             {
                 $address->adventure_id = $adventure->id;
                 $address->save();
@@ -181,18 +172,19 @@ class SearchController extends Controller {
                 // Save all categories associated to the place in database and check if never seen before categories
                 foreach ($here_categories as $here_category)
                 {
-                    $here_category_obj = HereCategory::findOne(['name' => $here_category]);
+                    $_here_category = HereCategory::findOne(['name' => $here_category['name']]);
 
-                    if (!$here_category_obj)
+                    if (!$_here_category)
                     {
                         $new_here_category = new HereCategory();
-                        $new_here_category->name = $here_category;
-                        $here_category_obj = $new_here_category->save();
+                        $new_here_category->code = $here_category['id'];
+                        $new_here_category->name = $here_category['name'];
+                        $_here_category = $new_here_category->save();
                     }
                     
                     $category_map = new AdventureHereCategoryMap();
                     $category_map->adventure_id = $adventure->id;
-                    $category_map->here_category_obj->id;
+                    $category_map->here_category_id = $_here_category->id;
                     $category_map->save();
                 }
             }

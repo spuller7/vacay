@@ -1,8 +1,8 @@
 <?php
     require_once '../app/require.php';
 
-    use app\controllers\AdventureController;
     use app\controllers\SearchController;
+    use app\controllers\AdminController;
 
     use app\core\Application;
     use app\classes\Route;
@@ -26,7 +26,7 @@
     $routes = [
         '/' => [SearchController::class, 'index'],
         '/search' => [SearchController::class, 'index'],
-        '/adventure' => [AdventureController::class, 'index'],
+        '/admin' => [AdminController::class, 'index']
     ];
 
     $app->router->set($routes);

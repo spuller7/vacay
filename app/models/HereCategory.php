@@ -10,6 +10,7 @@ class HereCategory extends DbModel {
     
     // Each column in the database should be named the same and listed as a variable here:
     // They must have some default value, or assigned in a constructor
+    public string $code = '';
     public string $name = '';
 
     /**
@@ -44,7 +45,7 @@ class HereCategory extends DbModel {
      */
     public function attributes(): array
     {
-        return ['name'];
+        return ['code', 'name'];
     }
 
     public function rules(): array

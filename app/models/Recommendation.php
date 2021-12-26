@@ -11,7 +11,7 @@ class Recommendation extends DbModel {
     // Each column in the database should be named the same and listed as a variable here:
     // They must have some default value, or assigned in a constructor
     public string $ip = '';
-    public string $google_place_id = '';
+    public string $adventure_id = '';
 
     /**
      * Table Name
@@ -45,7 +45,7 @@ class Recommendation extends DbModel {
      */
     public function attributes(): array
     {
-        return ['ip', 'google_place_id'];
+        return ['ip', 'adventure_id'];
     }
 
     public function rules(): array

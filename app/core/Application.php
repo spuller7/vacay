@@ -60,6 +60,7 @@ class Application
         }
         catch (\Exception $e)
         {
+            error_log(print_r($e->getCode(), true));
             $this->response->setStatusCode($e->getCode());
             echo $this->view->renderView('_error', [
                 'exception' => $e

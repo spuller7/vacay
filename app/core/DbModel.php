@@ -9,6 +9,7 @@ abstract class DbModel extends Model
     abstract public static function tableName(): string;
     abstract public function attributes(): array;
     abstract public function primaryKey(): string;
+    public $id = null;
 
     /**
      * Save
@@ -25,7 +26,12 @@ abstract class DbModel extends Model
 
         $params = array_map(fn($attr) => ":".$attr, $lowercase_attributes);
 
+        // TODO update existing item
         if ($this->id)
+        {
+
+        }
+
         $statement = self::prepare("INSERT INTO $tableName (".implode(',', $attributes).") VALUES (".implode(',', $params).")");
         foreach ($lowercase_attributes as $attribute)
         {
@@ -37,8 +43,8 @@ abstract class DbModel extends Model
             $statement->bindValue(":$attribute", $this->{$attribute});
         }
 
-        $statement->execute();
-        return static::fetchPDOObject($statement);
+        static::fetchPDOObject($statement);
+        return static::findOneByID(Application::$app->db->pdo->lastInsertId());
     }
 
     // Execute sql statement and modify object returned
@@ -71,7 +77,7 @@ abstract class DbModel extends Model
     /**
      * findOne
      *
-     * @param array $conditions [email => example@email.com, firstname => Travis]
+     * @param array $conditions ['email' => example@email.com, 'firstname' => Travis]
      * @return object
      */
     public static function findOne($conditions)
@@ -143,6 +149,8 @@ abstract class DbModel extends Model
     {
         return Application::$app->db->pdo->prepare($sql);
     }
+
+
 
     public function setAttributes($array)
     {

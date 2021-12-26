@@ -1,5 +1,5 @@
 body {
-    margin: 0px;
+    
 }
 
 #content {
@@ -222,8 +222,9 @@ label {
 
 
   body {
-    background-color: #212121 !important;
     overflow: hidden;
+    margin: 0px;
+    background-color: #f2f2f2 !important;
   }
   body .loader {
     position: absolute;
@@ -292,4 +293,26 @@ label {
     100% {
       transform: translate(-50%, -50%) rotate(360deg);
     }
+  }
+
+  #recommendButton {
+    margin-left: 15px;
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+
+  select[multiple] {
+    overflow-y: auto;
+    border: none;
+  }
+  select[multiple]:focus-visible {
+    outline: none;
+  }
+  select[multiple] option {
+    margin-right: 10px;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 2em;
+    
   }
