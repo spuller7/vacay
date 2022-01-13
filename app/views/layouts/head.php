@@ -6,6 +6,7 @@ use app\core\Application;
 <!doctype html>
 <html>
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
 	<?php Css::loadAll(array('style', 'datatable')); ?>
 
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/625a0aa3b5.js"></script>

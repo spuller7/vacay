@@ -314,5 +314,6 @@ label {
   .title {
     font-weight: 400;
     font-size: 2em;
-    
+    font-family: 'Lobster';
+    color: #2EB3FF;
   }

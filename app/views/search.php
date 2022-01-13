@@ -13,7 +13,7 @@
                     <div class="container">
                         <div class="row" style="margin-bottom: 0px;">
                             <div class="col-4">
-                                <div class="title">JAUNT</div>
+                                <div class="title">Jaunt</div>
                             </div>
                             <div class="col-8" style="display: flex;">
                                 <div class="autocomplete" style="display:inline-flex; margin-left:auto;align-items: center;">
@@ -82,6 +82,7 @@
                 </div>
             </div>
         </div>
+                                            </div>
 
         <div class="row">
             <div class="card" style="width: 100%">
