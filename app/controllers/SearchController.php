@@ -43,20 +43,34 @@ class SearchController extends Controller {
         
         $ajax = new AjaxResponse();
 
-        $query = "  SELECT * FROM adventures
+        $query = "  SELECT *, 
+                        (
+                            3959 * acos (
+                            cos ( radians(:lat) )
+                            * cos( radians( addresses.latitude ) )
+                            * cos( radians( addresses.longitude ) - radians(:lng) )
+                            + sin ( radians(:lat) )
+                            * sin( radians( addresses.latitude ) )
+                        )) AS distance 
+                    FROM adventures
                     INNER JOIN adventure_here_category_map AS ahcm ON ahcm.adventure_id = adventures.id
                     INNER JOIN here_categories ON here_categories.id = ahcm.here_category_id
                     WHERE
                         here_categories.id IN (SELECT here_categories.id FROM here_categories
                         INNER JOIN here_category_category_map AS hccm ON hccm.here_category_id = here_categories.id
                         INNER JOIN categories ON hccm.category_id = categories.id
-                        WHERE 1=1 ";
+                        WHERE 1=1 )
+                    HAVING distance < 25 ";
         $params = [];
 
-        if ($_POST['location'])
-        {
+        // Get geolocation of Place from Google
+        $fields = 'place_id,address_components,geometry,price_level';
+        $request_url = 'https://maps.googleapis.com/maps/api/place/details/json?fields='.$fields.'&place_id='.$_POST['cityPlaceID'];
+        $results = GoogleAPI::get($request_url)['result'];
 
-        }
+        $params['lat'] = $results['geometry']['location']['lat'];
+        $params['lng'] = $results['geometry']['location']['lng'];
+        
         if ($price_levels = $_POST['price_levels'])
         {
             $query .= " AND price_level IN (:price_levels)";
@@ -86,9 +100,22 @@ class SearchController extends Controller {
         $ajax->send();
     }
 
+    public function search_cities(Request $request, Response $response)
+    {
+        $ajax = new AjaxResponse();
+        $query = json_encode($_GET['query']);
+        $request_url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.urlencode($query).'&types=%28cities%29';
+        $ajax->query = $_GET['query'];
+        $ajax->response  = GoogleAPI::get($request_url)['predictions'] ?: null;
+        $ajax->success = true;
+
+        $ajax->send();
+    }
+
+
     public function recommend_place()
     {
-
+        error_log('here');
         $ajax = new AjaxResponse();
         $google_place_id = $_POST['place_id'];
         $adventure = Adventure::findOne(['google_place_id' => $google_place_id]);
@@ -110,8 +137,13 @@ class SearchController extends Controller {
                 $adventure->price_level = $results['price_level'];
             }
 
+            error_log(print_r($results, true));
+
             $address->longitude = $results['geometry']['location']['lng'];
             $address->latitude = $results['geometry']['location']['lat'];
+            
+            error_log($results['geometry']['location']['lng']);
+            error_log(print_r($address, true));
             
             $street = null;
             $street_number = null;

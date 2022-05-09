@@ -35,8 +35,11 @@
                         <form id="search-examples-form">
                             <div class="row" style="align-items: flex-end;">
                                 <div class="col-9">
-                                    <label for="filter1">City</label>
-                                    <input type="text" class="form-control" name="filter1" value='Ann Arbor, Michigan' disabled>
+                                    <label for="city">City</label>
+                                    <div class="autocomplete" style="display:flex; margin-left:auto;align-items: center;">
+                                        <input type="text" class="form-control" id="cityInput" name="city" value='Ann Arbor, Michigan'>
+                                        <input type="hidden" name="cityPlaceID" value='ChIJMx9D1A2wPIgR4rXIhkb5Cds'>
+                                    </div>
                                 </div>
                                 <div class="col-3">
                                     <button id="exploreButton" class="btn btn-labeled" style="height: calc(1.5em + .75rem + 2px); background: linear-gradient(135deg,#ff690f 0%,#e8381b 100%); color: #ffffff; width: 100%;">Explore</button>
@@ -44,10 +47,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="filters">Filters</div>
+                                    <div id="filterHeader">Filters <i :class="show_filters ? 'fas fa-chevron-down' : 'fas fa-chevron-right'"></i></div>
                                 </div>
                             </div>
-                            <div id="filters">
+                            <div id="filters" :style="show_filters ? '' : 'display: none'">
                                 <div class="row">
                                     <div class="col-12">
                                         <label>Categories</label>
@@ -148,7 +151,8 @@ var searchController = new Vue({
             'photo': '',
             'phone': '',
         },
-        suggested_place_id : ''
+        suggested_place_id : '',
+        show_filters : false
     },
     methods: {
         getAdventure: function() {
@@ -239,7 +243,7 @@ var searchController = new Vue({
                         /*append the DIV element as a child of the autocomplete container:*/
                         document.getElementById('suggestionInput').parentNode.appendChild(a);
 
-                        for (i = 0; i < suggestions.length; i++) {
+                        for (i = 0; i < Math.min(suggestions.length, 5); i++) {
                                 /*create a DIV element for each matching element:*/
                                 b = document.createElement("div");
                                 b.dataset.name = suggestions[i].name;
@@ -247,11 +251,12 @@ var searchController = new Vue({
                                 b.classList.add('suggestion')
                                 
                                 /*make the matching letters bold:*/
-                                b.innerHTML = "<p>" + suggestions[i].name + ' - ' + suggestions[i].formatted_address + "</strong>";
+                                b.innerHTML = "<p>" + suggestions[i].name + ' - ' + suggestions[i].formatted_address + "</p>";
                                 a.appendChild(b);
 
                                 b.addEventListener("click", function(e) {
                                     $('#suggestionInput').val(this.dataset.name);
+                                    $('#recommendButton').prop('disabled', false);
                                     searchController.suggested_place_id = this.dataset.place_id;
                                     closeAllLists();
                                 });
@@ -289,7 +294,64 @@ var searchController = new Vue({
                 }
 
             });
-        }
+        },
+
+        getCitySuggestions: function(input)
+        {
+            let data = {};
+            data['query'] = input;
+
+            $.ajax({
+                // url directed to a the getExamplesTable function in the datatable.php in /contollers
+                url: "/search/search_cities",
+                type: 'GET',
+                data: data,
+                success: function(res)
+                {
+                    if (res.success)
+                    {
+                        let a, b, i;
+                        let val = res.query;
+                        closeAllLists();
+                        if (!res.response) { return false;}
+
+                        let suggestions = res.response;
+                        if (suggestions.length <= 0) { return false;}
+
+                        currentFocus = -1;
+                        /*create a DIV element that will contain the items (values):*/
+                        a = document.createElement("DIV");
+                        a.setAttribute("class", "autocomplete-items");
+                        /*append the DIV element as a child of the autocomplete container:*/
+                        document.getElementById('cityInput').parentNode.appendChild(a);
+
+                        for (i = 0; i < suggestions.length; i++) {
+                                /*create a DIV element for each matching element:*/
+                                b = document.createElement("div");
+                                b.dataset.description = suggestions[i].description;
+                                b.dataset.place_id = suggestions[i].place_id;
+                                b.classList.add('suggestion')
+                                
+                                /*make the matching letters bold:*/
+                                b.innerHTML = "<p>" + suggestions[i].description + "</p>";
+                                a.appendChild(b);
+
+                                b.addEventListener("click", function(e) {
+                                    $('#cityInput').val(this.dataset.description);
+                                    $('#cityInput').attr('value', this.dataset.place_id);
+                                    
+                                    closeAllLists();
+                                });
+                        }
+                    }
+                    else
+                    {
+                        console.log("Unexpected Error");
+                    }
+                }
+
+            });
+        },
     }
 });
 
@@ -304,6 +366,13 @@ $(function() {
         if (this.value.length > 2)
         {
             searchController.getPlaceSuggestions(this.value);
+        }
+    });
+
+    $('#cityInput').on('input', function() {
+        if (this.value.length > 2)
+        {
+            searchController.getCitySuggestions(this.value);
         }
     });
 
@@ -328,6 +397,10 @@ $(function() {
         {
             target.addClass('disabled');
         }
+    });
+
+    $('#filterHeader').on('click', function(e) {
+        searchController.show_filters = !searchController.show_filters;
     });
 
     

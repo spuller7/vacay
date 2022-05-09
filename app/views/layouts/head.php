@@ -15,6 +15,7 @@ use app\core\Application;
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://kit.fontawesome.com/2495fab115.js" crossorigin="anonymous"></script>
 
 	<title><?= SITENAME; ?></title>
 
