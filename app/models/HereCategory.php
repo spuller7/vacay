@@ -31,7 +31,7 @@ class HereCategory extends DbModel {
      * Unique identifier for the table, should be 'id'
      * @return string
      */
-    public function primaryKey(): string
+    public static function primaryKey(): string
     {
         return 'id';
     }

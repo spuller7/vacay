@@ -1,7 +1,6 @@
 <?php
     use app\models\Category;
-    
-    $categories = Category::findAll(['active' => 1]);
+    //$categories = Category::findAll(['active' => 1]);
 ?>
 
 <div id="searchPage">
@@ -59,9 +58,11 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <select multiple name="categories[]" size="1">
+                                            <?php /*
                                             <?php foreach ($categories as $category): ?>
                                                 <option value="<?= $category['id']; ?>" class="btn btn-primary" selected><?= $category['name']; ?></option>
                                             <?php endforeach; ?>
+                                            */ ?>
                                         </select>
                                     </div>
                                 </div>   
@@ -425,9 +426,9 @@ function showLoader()
     $('#loader').show();
     //okpt("Galaxy Progress Loader");
     for(var i = 0; i < 40; i++) {
-    var radius = (rnd(1600,3400)/10);
-    var modifier = radius/160;
-    $(".loader").append("<div class=\"spinner\" style=\"animation: bar " + 4*modifier + "s linear infinite; height: " + radius + "px; animation-delay: -" + (rnd(40,80)/10) + "s\"></div>");
+        var radius = (rnd(1600,3400)/10);
+        var modifier = radius/160;
+        $(".loader").append("<div class=\"spinner\" style=\"animation: bar " + 4*modifier + "s linear infinite; height: " + radius + "px; animation-delay: -" + (rnd(40,80)/10) + "s\"></div>");
     }
 
     var loaded = 0;
