@@ -1,6 +1,6 @@
 <?php
-    use app\models\Category;
-    //$categories = Category::findAll(['active' => 1]);
+    use app\models\HereCategory;
+    $categories = HereCategory::findAll(['active' => 1]);
 ?>
 
 <div id="searchPage">
@@ -58,11 +58,9 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <select multiple name="categories[]" size="1">
-                                            <?php /*
                                             <?php foreach ($categories as $category): ?>
                                                 <option value="<?= $category['id']; ?>" class="btn btn-primary" selected><?= $category['name']; ?></option>
                                             <?php endforeach; ?>
-                                            */ ?>
                                         </select>
                                     </div>
                                 </div>   

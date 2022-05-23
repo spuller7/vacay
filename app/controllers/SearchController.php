@@ -43,7 +43,7 @@ class SearchController extends Controller {
         
         $ajax = new AjaxResponse();
 
-        $query = "  SELECT *, 
+        $query = "  SELECT adventures.id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
                         (
                             3959 * acos (
                             cos ( radians(:lat) )
@@ -55,12 +55,10 @@ class SearchController extends Controller {
                     FROM adventures
                     INNER JOIN adventure_here_category_map AS ahcm ON ahcm.adventure_id = adventures.id
                     INNER JOIN here_categories ON here_categories.id = ahcm.here_category_id
-                    WHERE
-                        here_categories.id IN (SELECT here_categories.id FROM here_categories
-                        INNER JOIN here_category_category_map AS hccm ON hccm.here_category_id = here_categories.id
-                        INNER JOIN categories ON hccm.category_id = categories.id
-                        WHERE 1=1 )
-                    HAVING distance < 25 ";
+                    LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) AS total FROM recommendations WHERE created_at >= DATE(NOW() - INTERVAL 1 MONTH) GROUP BY adventure_id) AS month_recommendations ON adventures.id = month_recommendations.adventure_id
+                    LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) / 2 AS total FROM recommendations WHERE created_at < DATE(NOW() - INTERVAL 1 MONTH) AND created_at >= DATE(NOW() - INTERVAL 2 MONTH) GROUP BY adventure_id) AS two_month_recommendations ON adventures.id = two_month_recommendations.adventure_id
+                    LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) / 3 AS total FROM recommendations WHERE created_at < DATE(NOW() - INTERVAL 2 MONTH) AND created_at >= DATE(NOW() - INTERVAL 3 MONTH) GROUP BY adventure_id) AS three_month_recommendations ON adventures.id = three_month_recommendations.adventure_id
+                    WHERE 1=1 ";
         $params = [];
 
         // Get geolocation of Place from Google
@@ -81,6 +79,8 @@ class SearchController extends Controller {
             $query .= "categories.id IN (:categories))";
             $params['categories'] = implode(', ', $categories);
         }
+
+        $query .= 'HAVING distance < 25';
 
         $adventures = Adventure::query($query, $params);
 
