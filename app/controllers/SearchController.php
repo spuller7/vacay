@@ -20,6 +20,7 @@ class SearchController extends Controller {
     
     public function __construct()
     {
+        
     }
 
     public function validate()
@@ -40,10 +41,9 @@ class SearchController extends Controller {
 
     public function discover(Request $request, Response $response)
     {
-        error_log(print_r($_POST, true));
         $ajax = new AjaxResponse();
 
-        $query = "  SELECT adventures.id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
+        $query = "  SELECT DISTINCT adventures.id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
                         (
                             3959 * acos (
                             cos ( radians(:lat) )
@@ -55,6 +55,7 @@ class SearchController extends Controller {
                     FROM adventures
                     INNER JOIN adventure_here_category_map AS ahcm ON ahcm.adventure_id = adventures.id
                     INNER JOIN here_categories ON here_categories.id = ahcm.here_category_id
+                    INNER JOIN addresses ON addresses.adventure_id = adventures.id
                     LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) AS total FROM recommendations WHERE created_at >= DATE(NOW() - INTERVAL 1 MONTH) GROUP BY adventure_id) AS month_recommendations ON adventures.id = month_recommendations.adventure_id
                     LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) / 2 AS total FROM recommendations WHERE created_at < DATE(NOW() - INTERVAL 1 MONTH) AND created_at >= DATE(NOW() - INTERVAL 2 MONTH) GROUP BY adventure_id) AS two_month_recommendations ON adventures.id = two_month_recommendations.adventure_id
                     LEFT JOIN (SELECT adventure_id, COUNT(adventure_id) / 3 AS total FROM recommendations WHERE created_at < DATE(NOW() - INTERVAL 2 MONTH) AND created_at >= DATE(NOW() - INTERVAL 3 MONTH) GROUP BY adventure_id) AS three_month_recommendations ON adventures.id = three_month_recommendations.adventure_id
@@ -71,18 +72,21 @@ class SearchController extends Controller {
         
         if ($price_levels = $_POST['prices'])
         {
-            $query .= " AND price_level IN (:price_levels)";
+            $query .= " AND price_level IN (:price_levels) ";
             $params['price_levels'] = implode(', ', $price_levels);;
         }
+
         if ($categories = $_POST['categories'])
         {
-            $query .= "categories.id IN (:categories))";
+            $query .= " AND here_categories.id IN (:categories) ";
             $params['categories'] = implode(', ', $categories);
         }
 
-        $query .= 'HAVING distance < 25';
+
+        $query .= 'HAVING distance < 25 AND weight != 0 ORDER BY -LOG(1.0 - RAND()) / weight';
 
         $adventures = Adventure::query($query, $params);
+        error_log(print_r($adventures, true));
 
         $ajax->success = true;
         $ajax->send();
@@ -136,13 +140,8 @@ class SearchController extends Controller {
                 $adventure->price_level = $results['price_level'];
             }
 
-            error_log(print_r($results, true));
-
             $address->longitude = $results['geometry']['location']['lng'];
             $address->latitude = $results['geometry']['location']['lat'];
-            
-            error_log($results['geometry']['location']['lng']);
-            error_log(print_r($address, true));
             
             $street = null;
             $street_number = null;

@@ -60,7 +60,15 @@ class Application
         }
         catch (\Exception $e)
         {
-            error_log(print_r($e->getCode(), true));
+            if ($code = '42000')
+            {
+                error_log(print_r($e->getMessage(), true));
+            }
+            else
+            {
+                error_log(print_r($e->getCode(), true));
+            }
+
             $this->response->setStatusCode($e->getCode());
             echo $this->view->renderView('_error', [
                 'exception' => $e

@@ -150,7 +150,23 @@ abstract class DbModel extends Model
         return Application::$app->db->pdo->prepare($sql);
     }
 
+    /**
+     * Query
+     * 
+     */
+    public static function query($query, $params)
+    {
+        $statement = self::prepare($query);
 
+        foreach ($params as $key => $item)
+        {
+            if ($item !== null)
+                $statement->bindValue(":$key", $item);
+        }
+
+        $result = $statement->execute();
+        return $statement->fetchAll();
+    }
 
     public function setAttributes($array)
     {
