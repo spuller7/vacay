@@ -40,7 +40,7 @@ class SearchController extends Controller {
 
     public function discover(Request $request, Response $response)
     {
-        
+        error_log(print_r($_POST, true));
         $ajax = new AjaxResponse();
 
         $query = "  SELECT adventures.id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
@@ -69,7 +69,7 @@ class SearchController extends Controller {
         $params['lat'] = $results['geometry']['location']['lat'];
         $params['lng'] = $results['geometry']['location']['lng'];
         
-        if ($price_levels = $_POST['price_levels'])
+        if ($price_levels = $_POST['prices'])
         {
             $query .= " AND price_level IN (:price_levels)";
             $params['price_levels'] = implode(', ', $price_levels);;

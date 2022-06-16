@@ -12,7 +12,7 @@
                     <div class="container">
                         <div class="row" style="margin-bottom: 0px;">
                             <div class="col-4">
-                                <div class="title">Jaunt</div>
+                                <div class="title">Eat Seeks</div>
                             </div>
                             <div class="col-8" style="display: flex;">
                                 <div class="autocomplete" style="display:inline-flex; margin-left:auto;align-items: center;">
@@ -37,7 +37,7 @@
                                     <label for="city">City</label>
                                     <div class="autocomplete" style="display:flex; margin-left:auto;align-items: center;">
                                         <input type="text" class="form-control" id="cityInput" name="city" value='Ann Arbor, Michigan'>
-                                        <input type="hidden" name="cityPlaceID" value='ChIJMx9D1A2wPIgR4rXIhkb5Cds'>
+                                        <input type="hidden" id="cityPlaceID" name="cityPlaceID" value='ChIJMx9D1A2wPIgR4rXIhkb5Cds'>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -84,10 +84,10 @@
                 </div>
             </div>
         </div>
-                                            </div>
+    </div>
 
         <div class="row">
-            <div class="card" style="width: 100%">
+            <div class="card" style="width: 100%; display: none;">
 
                 <div class="card-body">
                     <div id="result" class="container">
@@ -160,6 +160,10 @@ var searchController = new Vue({
 
             //showLoader();
 
+            console.log($('#search-examples-form').serialize());
+
+            data['cityPlaceID'] = $('#cityPlaceID').val();
+
             data['free'] = $('#freeCheckbox').hasClass('disabled') ? 0 : 1;
             data['oneDollar'] = $('#oneDollarCheckbox').hasClass('disabled') ? 0 : 1;
             data['twoDollar'] = $('#twoDollarCheckbox').hasClass('disabled') ? 0 : 1;
@@ -168,8 +172,8 @@ var searchController = new Vue({
             $.ajax({
                 // url directed to a the getExamplesTable function in the datatable.php in /contollers
                 url: "/search/discover",
-                type: 'GET',
-                data: data,
+                type: 'POST',
+                data: $('#search-examples-form').serialize(),
                 success: function(res)
                 {
                     if (res.success)
