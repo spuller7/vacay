@@ -161,11 +161,18 @@ abstract class DbModel extends Model
         foreach ($params as $key => $item)
         {
             if ($item !== null)
+            {
                 $statement->bindValue(":$key", $item);
+                error_log('her');
+            }
         }
 
         $result = $statement->execute();
-        return $statement->fetchAll();
+        error_log(print_r($statement, true));
+        error_log(print_r($statement->debugDumpParams(), true));
+        $results = $statement->fetch(Application::$app->db->pdo::FETCH_ASSOC);
+
+        return $results;
     }
 
     public function setAttributes($array)
