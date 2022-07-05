@@ -87,10 +87,10 @@
     </div>
 
         <div class="row">
-            <div class="card" style="width: 100%; display: none;">
+            <div id="result" class="card" style="width: 100%; display: none;">
 
                 <div class="card-body">
-                    <div id="result" class="container">
+                    <div class="container">
                         <div class="row">
                             <div class="col-12">
                                 <h1>{{location['title']}}</h1>
@@ -178,34 +178,13 @@ var searchController = new Vue({
                 {
                     if (res.success)
                     {
-                        if (!res.specialPlace)
-                        {
-                            let numResults = res.response.items.length;
+                        console.log(res);
+                        let adventure = res.adventure;
+                        searchController.location['title'] = adventure['name'];
+                        searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
+                        searchController.location['address'] = adventure['formatted_address'];
 
-                            let choiceIndex = Math.floor(Math.random() * numResults);
-                            let adventure = res.response.items[choiceIndex];
-                            searchController.location['title'] = adventure['title'];
-                            searchController.location['hours'] = adventure['openingHours'] ? adventure['openingHours'][0]['text'][0] : 'N/A';
-                            searchController.location['address'] = adventure['address']['label'];
-
-                            //$('#search').hide();
-                            //$('#result').show();
-                        }
-                        else
-                        {
-                            adventure = res.response.result;
-                            searchController.location['title'] = adventure['name'];
-                            searchController.location['hours'] = adventure['opening_hours']['open_now'];
-                            searchController.location['address'] = adventure['formatted_address'];
-                            searchController.location['phone'] = adventure['formatted_phone_number'];
-
-                            $key = 'AIzaSyA3tAENcwKmOa6m2Y4B4SIXbEEi_GN0F4A';
-                            searchController.location['photo'] = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + adventure['photos'][1]['photo_reference'] + "&sensor=false&maxheight=500&maxwidth=500&key=" + $key;
-
-                            //$('#search').hide();
-                            //$('#specialResult').show();
-                        }
-                        
+                        $('#result').show();
                     }
                     else
                     {

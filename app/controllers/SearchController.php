@@ -43,7 +43,7 @@ class SearchController extends Controller {
     {
         $ajax = new AjaxResponse();
 
-        $query = "  SELECT DISTINCT adventures.id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
+        $query = "  SELECT DISTINCT adventures.id, adventures.google_place_id, (IFNULL(month_recommendations.total, 0) + IFNULL(two_month_recommendations.total, 0) + IFNULL(three_month_recommendations.total, 0)) AS weight, 
                         (
                             3959 * acos (
                             cos ( radians(:lat) )
@@ -73,22 +73,35 @@ class SearchController extends Controller {
         if ($price_levels = $_POST['prices'])
         {
             $query .= " AND price_level IN (:price_levels) ";
-            $params['price_levels'] = implode(', ', $price_levels);;
+            $params['price_levels'] = $price_levels;
         }
 
         if ($categories = $_POST['categories'])
         {
             $query .= " AND here_categories.id IN (:categories) ";
-            $params['categories'] = implode(', ', $categories);
+            $params['categories'] = $categories;
         }
 
 
-        $query .= 'HAVING distance < 25 AND weight != 0 ORDER BY -LOG(1.0 - RAND()) / weight';
+        $query .= 'HAVING distance < 25 AND weight != 0 ORDER BY -LOG(1.0 - RAND()) / weight LIMIT 4';
 
         $adventures = Adventure::query($query, $params);
         error_log(print_r($adventures, true));
 
-        $ajax->success = true;
+        // TODO implement backup search for new cities
+        // if (!$adventures)
+        // {
+        //     $adventures = $this->recommend_place();
+        // }
+
+        $recommendation = new Recommendation();
+        $recommendation->adventure_id = $adventures[0]['id'];
+        $recommendation->ip = $_SERVER['REMOTE_ADDR'];
+
+        $ajax->adventures = $adventures;
+        $ajax->adventure = $this->get_google_information($adventures[0]['google_place_id']);
+
+        $ajax->success = $recommendation->save();
         $ajax->send();
     }
 
@@ -116,11 +129,16 @@ class SearchController extends Controller {
         $ajax->send();
     }
 
+    private function get_google_information($google_place_id)
+    {
+        $fields = 'place_id,address_components,geometry,price_level,name,formatted_address';
+        $request_url = 'https://maps.googleapis.com/maps/api/place/details/json?fields='.$fields.'&place_id='.$google_place_id;
+        return GoogleAPI::get($request_url)['result'];
+    }
+
 
     public function recommend_place()
     {
-        $ajax = new AjaxResponse();
-        $google_place_id = $_POST['place_id'];
         $adventure = Adventure::findOne(['google_place_id' => $google_place_id]);
 
         // Add new location to database
