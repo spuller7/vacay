@@ -139,6 +139,8 @@ class SearchController extends Controller {
 
     public function recommend_place()
     {
+        $ajax = new AjaxResponse();
+        $google_place_id = $_POST['place_id'];
         $adventure = Adventure::findOne(['google_place_id' => $google_place_id]);
 
         // Add new location to database
