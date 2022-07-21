@@ -22,8 +22,8 @@ class Database
             'region' => 'us-east-2',
             'version' => 'latest',
             'credentials' => [
-                'key'    => 'AKIAVA5ATUCZ6IXEM4G3',
-                'secret' => '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'
+                'key'    => '',
+                'secret' => ''
             ]
         ]);
 
