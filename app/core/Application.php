@@ -21,23 +21,16 @@ class Application
     public $users; 
     public View $view;
     public $navigation = [];
+    public $config = [];
     
     public function __construct($rootPath, array $config)
     {
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
+        $this->config = $config;
 
         $this->loggedInUser = null;
         $this->session = new Session();
-        
-        // $username = Application::$app->session->get('user');
-        // if ($username)
-        // {
-        //     $loggedInUser = new User();
-        //     $this->loggedInUser = $loggedInUser->findByUsername($username);
-        // }
-
-        // $this->users = User::getAllUsers();
 
         $this->db = new Database($config['db']);
         $this->request = new Request();

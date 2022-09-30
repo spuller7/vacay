@@ -5,13 +5,6 @@ namespace app\core;
 use Aws\SecretsManager\SecretsManagerClient; 
 use Aws\Exception\AwsException;
 
-// var AWS = require('aws-sdk'),
-//     region = "us-east-2",
-//     secretName = "Jaunt-Database-Credentials",
-//     secret,
-//     decodedBinarySecret;
-
-
 class Database
 {
     public \PDO $pdo;
