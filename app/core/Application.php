@@ -60,6 +60,7 @@ class Application
         }
         catch (\Exception $e)
         {
+            
             if ($code = '42000')
             {
                 error_log(print_r($e->getMessage(), true));

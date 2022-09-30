@@ -4,7 +4,7 @@ class Css
 {
     public static function load($path, $output = true)
     {
-        $file_path = "/css/".$path.".css";
+        $file_path = "public/css/".$path.".css";
         if (!file_exists($file_path))
         {
             //return null;

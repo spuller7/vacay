@@ -86,7 +86,6 @@ class SearchController extends Controller {
         $query .= 'HAVING distance < 25 AND weight != 0 ORDER BY -LOG(1.0 - RAND()) / weight LIMIT 4';
 
         $adventures = Adventure::query($query, $params);
-        error_log(print_r($adventures, true));
 
         // TODO implement backup search for new cities
         // if (!$adventures)
@@ -98,8 +97,21 @@ class SearchController extends Controller {
         $recommendation->adventure_id = $adventures[0]['id'];
         $recommendation->ip = $_SERVER['REMOTE_ADDR'];
 
-        $ajax->adventures = $adventures;
-        $ajax->adventure = $this->get_google_information($adventures[0]['google_place_id']);
+        $adventure_list = [];
+
+        foreach ($adventures as $adv)
+        {
+            $adventure = $this->get_google_information($adv['google_place_id']);
+            
+            foreach ($adventure['photos'] as $photo)
+            {
+                $adventure['photo_list'][] = GoogleAPI::getPhoto($photo['photo_reference']);
+            }
+            
+            $adventure_list[] = $adventure;
+        }
+
+        $ajax->adventures = $adventure_list;
 
         $ajax->success = $recommendation->save();
         $ajax->send();
@@ -108,8 +120,24 @@ class SearchController extends Controller {
     public function search_suggestions(Request $request, Response $response)
     {
         $ajax = new AjaxResponse();
+
+        // Default Lat/Lng is Ann Arbor
+        $lat = '42.2808';
+        $lng = '-83.7430';
+
+        // Get geolocation of Place from Google
+        $fields = 'geometry';
+        $request_url = 'https://maps.googleapis.com/maps/api/place/details/json?fields='.$fields.'&place_id='.$_POST['cityPlaceID'];
+        $results = GoogleAPI::get($request_url)['result'];
+
+        if ($results)
+        {
+            $lat = $results['geometry']['location']['lat'];
+            $lng = $results['geometry']['location']['lng'];
+        }
+
         $query = json_encode($_GET['query']);
-        $request_url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query='.urlencode($query).'&locationbias=circle:2000@42.2808,-83.7430';
+        $request_url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query='.urlencode($query).'&locationbias=circle:2000@'.$lat.','.$lng;
         $ajax->query = $_GET['query'];
         $ajax->response  = GoogleAPI::get($request_url)['results'] ?: null;
         $ajax->success = true;
@@ -131,7 +159,7 @@ class SearchController extends Controller {
 
     private function get_google_information($google_place_id)
     {
-        $fields = 'place_id,address_components,geometry,price_level,name,formatted_address';
+        $fields = 'place_id,address_components,geometry,price_level,name,formatted_address,photo,formatted_phone_number';
         $request_url = 'https://maps.googleapis.com/maps/api/place/details/json?fields='.$fields.'&place_id='.$google_place_id;
         return GoogleAPI::get($request_url)['result'];
     }

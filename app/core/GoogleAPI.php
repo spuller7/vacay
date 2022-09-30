@@ -11,4 +11,10 @@ class GoogleAPI
         $request_url = $request_url.'&key='.self::$key;
         return json_decode(file_get_contents($request_url), true);
     }
+
+    static function getPhoto($reference)
+    {
+        $url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='.$reference.'&key='.self::$key;
+        return $url;
+    }
 }

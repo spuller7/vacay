@@ -54,7 +54,7 @@ class Router
 
         // Callback (or view file name) defined in index.php
         $callback = $this->routes[$path] ?? false;
-
+        
         if ($callback == false)
         {
             // www.domain.com/controller/function --> www.domain.com/controller

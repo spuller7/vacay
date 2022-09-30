@@ -1,5 +1,11 @@
-body {
-    
+.search-card
+{
+  background: linear-gradient(145deg, #2E3243 0%, #2F77D6 100%);
+}
+
+.centerContent {
+  display: flex;
+  justify-content: center;
 }
 
 #content {
@@ -179,7 +185,7 @@ label {
     position: relative;
     display: inline-block;
   }
-.autocomplete-items {
+.autocomplete-items, .autocomplete-items-loader {
     position: absolute;
     border: 1px solid #d4d4d4;
     border-bottom: none;
@@ -191,7 +197,7 @@ label {
     right: 0;
   }
   
-  .autocomplete-items div {
+  .autocomplete-items div, .autocomplete-items-loader div {
     padding: 10px;
     cursor: pointer;
     background-color: #fff; 
@@ -200,13 +206,18 @@ label {
   
   /*when hovering an item:*/
   .autocomplete-items div:hover {
-    background-color: #e9e9e9; 
+    background-color: #e9e9e9;
   }
   
   /*when navigating through the items using the arrow keys:*/
   .autocomplete-active {
     background-color: DodgerBlue !important; 
     color: #ffffff; 
+  }
+
+  .autocomplete-items-loader .loading-items {
+    display: flex;
+    justify-content: center;
   }
 
   
@@ -220,13 +231,15 @@ label {
   #filters .btn-primary.disabled, .btn-primary:disabled {
     /* background-color: #007bff; */
     /* border-color: #007bff; */
-    background: none !important;
+    background: #e4e4e4 !important;
     color: black !important;
   }
 
+  .hidden {
+    display : none;
+  }
 
   body {
-    overflow: hidden;
     margin: 0px;
     background-color: #f2f2f2 !important;
   }
@@ -299,9 +312,51 @@ label {
     }
   }
 
+  .button-svg {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+
+  #recommend-loader svg path,
+  #recommend-loader svg rect{
+    fill: white;
+  }
+
+  .button-svg svg {
+    height: 100%;
+  }
+
+  #recommend-checkmark svg {
+    height: 75%;
+    vertical-align: -webkit-baseline-middle;
+  }
+
+  .checkmark {
+    stroke: white;
+    stroke-dashoffset: 745.74853515625;
+    stroke-dasharray: 745.74853515625;
+    animation: dash 2s ease-out forwards infinite;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 745.74853515625;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
   #recommendButton {
     margin-left: 15px;
     height: calc(1.5em + 0.75rem + 2px);
+    position: relative;
+  }
+
+  #recommendButton.dissapear {
+    color: transparent;
   }
 
   select[multiple] {
@@ -318,6 +373,8 @@ label {
   .title {
     font-weight: 400;
     font-size: 2em;
-    font-family: 'Lobster';
     color: #2EB3FF;
+  }
+  .title b {
+    color: #fff;
   }

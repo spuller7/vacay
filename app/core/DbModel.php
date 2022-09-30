@@ -323,7 +323,6 @@ abstract class DbModel extends Model
         $statement = self::prepare($query, $params);
 
         $result = $statement->execute();
-        error_log(print_r($statement, true));
         $results = $statement->fetchAll(Application::$app->db->pdo::FETCH_ASSOC);
 
         return $results;

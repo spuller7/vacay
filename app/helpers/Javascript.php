@@ -4,7 +4,7 @@ class Javascript
 {
     public static function load($path, $output = true)
     {
-        $file_path = "/js/".$path.".js";
+        $file_path = "public/js/".$path.".js";
 
         if (!file_exists($file_path))
         {
